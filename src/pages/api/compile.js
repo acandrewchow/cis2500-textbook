@@ -19,7 +19,7 @@ export default async (req, res) => {
     return res.status(400).json({ error: 'No code provided' });
   }
 
-  const tempDir = path.join(__dirname, '../../.next/server/pages/api/temp');
+  const tempDir = path.join(__dirname, '.next/server/pages/api/temp');
   const cFilePath = path.join(tempDir, 'example.c');
   const executablePath = path.join(tempDir, 'example');
 
@@ -32,20 +32,13 @@ export default async (req, res) => {
         return res.status(500).json({ error: compileErr.message });
       }
 
-      try {
-        const compiledCode = await fs.readFile(cFilePath, 'utf8');
+      execFile(executablePath, (runErr, runStdout, runStderr) => {
+        if (runErr) {
+          return res.status(500).json({ error: runErr.message });
+        }
 
-        execFile(executablePath, (runErr, runStdout, runStderr) => {
-          if (runErr) {
-            return res.status(500).json({ error: runErr.message });
-          }
-
-          res.status(200).json({ output: runStdout, error: runStderr, compiledCode });
-        });
-      } catch (readErr) {
-        console.error('Error reading file:', readErr);
-        res.status(500).json({ error: 'An error occurred while reading the file.' });
-      }
+        res.status(200).json({ output: runStdout, error: runStderr });
+      });
     });
   } catch (error) {
     console.error('Error:', error);
