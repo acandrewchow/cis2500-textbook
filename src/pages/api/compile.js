@@ -1,6 +1,7 @@
 const fs = require('fs').promises;
 const { execFile } = require('child_process');
 const path = require('path');
+const os = require('os');
 
 /**
  * API endpoint to compile and run C source code.
@@ -19,7 +20,7 @@ export default async (req, res) => {
     return res.status(400).json({ error: 'No code provided' });
   }
 
-  const tempDir = path.join(__dirname, '.next/server/pages/api/temp');
+  const tempDir = path.join(os.tmpdir(), 'compile_temp');
   const cFilePath = path.join(tempDir, 'example.c');
   const executablePath = path.join(tempDir, 'example');
 
@@ -27,7 +28,7 @@ export default async (req, res) => {
     await fs.mkdir(tempDir, { recursive: true });
     await fs.writeFile(cFilePath, code);
 
-    execFile('gcc', [cFilePath, '-o', executablePath, '-std=c99', '-Wall'], async (compileErr, stdout, stderr) => {
+    execFile('gcc', [cFilePath, '-o', executablePath, '-std=c99', '-Wall'], (compileErr, stdout, stderr) => {
       if (compileErr) {
         return res.status(500).json({ error: compileErr.message });
       }
