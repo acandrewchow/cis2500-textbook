@@ -64,7 +64,7 @@ export default function Installation() {
           <li>
             Run
             <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
-              docker run -p 3000:3000 cis2500-textbook
+              docker run --name cis2500 -p 3000:3000 cis2500-textbook
             </code>
             to set up the Docker container on your local machine
           </li>
