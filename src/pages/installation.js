@@ -57,7 +57,7 @@ export default function Installation() {
           <li>
             Run the command
             <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
-              docker build -t cis2500-textbook
+              docker build -t cis2500-textbook .
             </code>
             to build the initial image for the textbook
           </li>
