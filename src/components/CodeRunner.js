@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { cpp } from "@codemirror/lang-cpp";
 
-export default function CodeRunner({ codeFilePath, apiEndpoint }) {
+export default function CodeRunner({ codeFilePath, apiEndpoint, isReadOnly }) {
   const [code, setCode] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
@@ -51,7 +51,7 @@ export default function CodeRunner({ codeFilePath, apiEndpoint }) {
     <div className="min-h-screen bg-gray-50 text-gray-800 p-8">
       <div>
         <CodeMirror
-          readOnly={true}
+          readOnly={isReadOnly}
           value={code}
           onChange={(value) => setCode(value)}
           extensions={[cpp()]}
@@ -67,15 +67,15 @@ export default function CodeRunner({ codeFilePath, apiEndpoint }) {
       </div>
 
       {output && (
-        <div className="mt-4 p-4 bg-green-100 rounded">
-          <h3 className="text-lg font-bold">Program Output</h3>
-          <pre>{output}</pre>
+        <div className="mt-4 p-4 bg-gray-700 rounded text-white">
+          <h3 className="text-md font-bold">Program Output</h3>
+          <code>{output}</code>
         </div>
       )}
       {error && (
-        <div className="mt-4 p-4 bg-red-100 rounded">
-          <h3 className="text-lg font-bold">Error:</h3>
-          <pre>{error}</pre>
+        <div className="mt-4 p-4 bg-red-100 rounded text-gray">
+          <h3 className="text-md font-bold">Error:</h3>
+          <code>{error}</code>
         </div>
       )}
     </div>
