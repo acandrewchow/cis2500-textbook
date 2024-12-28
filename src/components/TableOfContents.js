@@ -97,7 +97,7 @@ export default function TableOfContents() {
                           setIsOpen(false);
                           setIsLecturesOpen(false);
                         }}
-                        className="text-sm text-white hover:text-blue-600"
+                        className="text-md text-white hover:text-blue-600"
                       >
                         {lecture.label}
                       </Link>
@@ -108,7 +108,17 @@ export default function TableOfContents() {
             </li>
             <li className="mb-4 text-center">
               <Link
-                href="/lectures/resources"
+                href="/quizzes/home"
+                onClick={() => setIsOpen(false)}
+                className="text-lg text-white hover:text-blue-600"
+              >
+                Quizzes
+              </Link>
+            </li>
+
+            <li className="mb-4 text-center">
+              <Link
+                href="/resources"
                 onClick={() => setIsOpen(false)}
                 className="text-lg text-white hover:text-blue-600"
               >
