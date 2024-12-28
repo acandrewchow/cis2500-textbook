@@ -1,6 +1,5 @@
 import React from "react";
 import TableOfContents from "@/components/TableOfContents";
-import Footer from "@/components/Footer";
 
 export default function Installation() {
   return (
@@ -51,9 +50,12 @@ export default function Installation() {
               git clone github.com/acandrewchow/cis2500-textbook
             </code>
           </li>
-          <li>Navigate to the project directory <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
+          <li>
+            Navigate to the project directory{" "}
+            <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
               cd cis2500-textbook
-            </code></li>
+            </code>
+          </li>
           <li>
             Run the command
             <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
@@ -80,8 +82,36 @@ export default function Installation() {
             </a>
           </li>
         </ol>
+
+        <h2 className="text-2xl font-semibold mb-4 mt-4">Demo</h2>
+
+        <div className="mb-6">
+          <video
+            width="100%"
+            height="auto"
+            controls
+            className="rounded-lg shadow-lg"
+          >
+            <source src="/demos/setup.mov" type="video/mp4" />
+          </video>
+        </div>
+
+        <h2 className="text-2xl font-semibold mb-4 mt-4">Key Notes</h2>
+
+        <p className="mb-6">
+          Keep in mind that the Docker container will run in the background. If
+          you need to stop the container, you can run the command{" "}
+          <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
+            docker stop cis2500
+          </code>
+          or click the stop button in Docker Desktop. Similarly, you can start
+          the container again with
+          <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
+            docker start cis2500
+          </code>{" "}
+          or by clicking the play button.
+        </p>
       </section>
-      <Footer />
     </div>
   );
 }
