@@ -1,0 +1,14 @@
+[
+    {
+      "id": 1,
+      "text": "What is the correct command to compile code in CIS2500?",
+      "choices": [
+        { "label": "A", "text": "gcc -std=c99 -Wall filename.c" },
+        { "label": "B", "text": "gcc -std=c99 -Wall filename.c" },
+        { "label": "C", "text": "gcc -std=c99 -Wall filename.c" },
+        { "label": "D", "text": "gcc -std=c99 -Wall filename.c" },
+        { "label": "E", "text": "All of the above" }
+      ],
+      "correctAnswer": "E"
+    }
+  ]
