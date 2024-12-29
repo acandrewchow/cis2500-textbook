@@ -16,7 +16,7 @@ const Home = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-zinc-900 text-white p-8">
       <TableOfContents />
       <h1 className="text-4xl font-bold mt-12 mb-6 text-center">Quizzes</h1>      
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2 w-full max-w-2xl">
+      <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-3 w-full max-w-4xl">
         {quizzes.map((quiz, index) => (
           <div
             key={index}
