@@ -4,7 +4,7 @@ import React, { useState } from "react";
 Component that accepts a list of questions for a quiz 
 */
 
-const Quiz = ({ questions, quizNumber }) => {
+const Quiz = ({ questions }) => {
   const [answers, setAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -41,7 +41,7 @@ const Quiz = ({ questions, quizNumber }) => {
           {questions.map((question) => (
             <div key={question.id} className="question-container mb-4">
               <h2 className="text-lg font-semibold mb-2 text-white">
-                {question.text}
+                Question {question.id}: {question.text}
               </h2>
               {question.code && (
                 <pre className="bg-zinc-900 p-4 rounded text-white overflow-auto">
