@@ -11,7 +11,7 @@ import {
 
 export default function TableOfContents() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isLecturesOpen, setIsLecturesOpen] = useState(false);
+  const [isTopicsOpen, setIsTopicsOpen] = useState(false);
 
   const items = [
     { link: "/", label: "Home" },
@@ -19,27 +19,24 @@ export default function TableOfContents() {
     { link: "tutorials", label: "Tutorials" },
   ];
 
-  const lectures = [
-    { link: "lectures/week1", label: "Week 1" },
-    { link: "lectures/week2", label: "Week 2" },
-    { link: "lectures/week3", label: "Week 3" },
-    { link: "lectures/week4", label: "Week 4" },
-    { link: "lectures/week5", label: "Week 5" },
-    { link: "lectures/week6", label: "Week 6" },
-    { link: "lectures/week7", label: "Week 7" },
-    { link: "lectures/week8", label: "Week 8" },
-    { link: "lectures/week9", label: "Week 9" },
-    { link: "lectures/week10", label: "Week 10" },
-    { link: "lectures/week11", label: "Week 11" },
-    { link: "lectures/week12", label: "Week 12" },
+  /* update lectures to content */
+  const topics = [
+    { link: "topics/compilation", label: "Compilation" },
+    { link: "topics/binary-files", label: "Binary Files" },
+    { link: "topics/dynamic-memory-allocation", label: "Dynamic Memory Allocation" },
+    { link: "topics/recursion", label: "Recursion" },
+    { link: "topics/linked-lists", label: "Linked Lists" },
+    { link: "topics/stacks-and-queues", label: "Stacks and Queues" },
+    { link: "topics/function-pointers", label: "Function Pointers" },
+    { link: "topics/search-and-sorting", label: "Algorithms - Searching & Sorting" },
   ];
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
-  const toggleLectures = () => {
-    setIsLecturesOpen(!isLecturesOpen);
+  const toggleTopics = () => {
+    setIsTopicsOpen(!isTopicsOpen);
   };
 
   return (
@@ -78,28 +75,28 @@ export default function TableOfContents() {
             </li>
             <li className="mb-4">
               <button
-                onClick={toggleLectures}
+                onClick={toggleTopics}
                 className="w-full text-lg text-white hover:text-blue-600 flex items-center justify-center"
               >
-                Lectures
+                Topics
                 <FontAwesomeIcon
-                  icon={isLecturesOpen ? faChevronUp : faChevronDown}
+                  icon={isTopicsOpen ? faChevronUp : faChevronDown}
                   className="ml-2"
                 />
               </button>
-              {isLecturesOpen && (
+              {isTopicsOpen && (
                 <ul className="mt-2 space-y-2 text-center">
-                  {lectures.map((lecture, index) => (
+                  {topics.map((topic, index) => (
                     <li key={index}>
                       <Link
-                        href={lecture.link}
+                        href={topic.link}
                         onClick={() => {
                           setIsOpen(false);
-                          setIsLecturesOpen(false);
+                          setIsTopicsOpen(false);
                         }}
                         className="text-md text-white hover:text-blue-600"
                       >
-                        {lecture.label}
+                        {topic.label}
                       </Link>
                     </li>
                   ))}
