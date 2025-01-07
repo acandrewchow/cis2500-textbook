@@ -67,6 +67,10 @@
         {
           "src": "../images/gitlab-tutorial-two.png",
           "alt": "GitLab Repository"
+        },
+        {
+          "src": "../images/gitlab-tutorial-three.png",
+          "alt": "GitLab Commit"
         }
       ]
     }
