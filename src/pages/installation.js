@@ -1,5 +1,6 @@
 import React from "react";
 import TableOfContents from "@/components/TableOfContents";
+import installationContent from "@/data/tutorials/installationContent.json";
 
 export default function Installation() {
   return (
@@ -7,84 +8,54 @@ export default function Installation() {
       <TableOfContents />
 
       <h1 className="text-4xl font-bold mt-12 mb-6 text-center">
-        Installation Instructions
+        {installationContent.title}
       </h1>
 
       <section className="mt-12 text-lg max-w-3xl">
-        <h2 className="text-2xl font-semibold mb-4">Prerequisites</h2>
-        <p className="mb-6">
-          Before you can set up the interactive textbook locally, ensure you
-          have the following installed:
-        </p>
+        <h2 className="text-2xl font-semibold mb-4">
+          {installationContent.prerequisites.title}
+        </h2>
+        <p className="mb-6">{installationContent.prerequisites.description}</p>
         <ul className="list-disc list-inside text-left space-y-2">
-          <li>
-            <a
-              href="https://git-scm.com/download"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800"
-            >
-              Git Version Control
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.docker.com/products/docker-desktop"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800"
-            >
-              Docker
-            </a>
-          </li>
+          {installationContent.prerequisites.items.map((item, index) => (
+            <li key={index}>
+              <a
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800"
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
         </ul>
 
-        <h2 className="text-2xl font-semibold mb-4 mt-4">Steps to Install</h2>
-        <p className="mb-6">
-          Follow these steps to get the interactive textbook up and running:
-        </p>
-        <ol className="list-decimal list-inside text-left space-y-2">
-          <li>
-            Clone the repository from GitHub -{" "}
-            <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
-              git clone github.com/acandrewchow/cis2500-textbook
-            </code>
-          </li>
-          <li>
-            Navigate to the project directory{" "}
-            <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
-              cd cis2500-textbook
-            </code>
-          </li>
-          <li>
-            Run the command
-            <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
-              docker build -t cis2500-textbook .
-            </code>
-            to build the initial image for the textbook
-          </li>
-          <li>
-            Run
-            <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
-              docker run --name cis2500 -p 3000:3000 cis2500-textbook
-            </code>
-            to set up the Docker container on your local machine
-          </li>
-          <li>
-            Open your browser and navigate to
-            <a
-              href="http://localhost:3000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 ml-1"
-            >
-              http://localhost:3000
-            </a>
-          </li>
+        <h2 className="text-2xl font-semibold mb-4 mt-4">
+          {installationContent.steps.title}
+        </h2>
+        <p className="mb-6">{installationContent.steps.description}</p>
+        <ol className="list-decimal text-left">
+          {installationContent.steps.items.map((step, index) => (
+            <li key={index} className="space-y-2 ml-4">
+              <p>
+                {step.text}{" "}
+                {step.code && (
+                  <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
+                    {step.code}
+                  </code>
+                )}
+                {step.explanation && (
+                  <span className="text-white">{step.explanation}</span>
+                )}
+              </p>
+            </li>
+          ))}
         </ol>
 
-        <h2 className="text-2xl font-semibold mb-4 mt-4">Demo</h2>
-
+        <h2 className="text-2xl font-semibold mb-4 mt-4">
+          {installationContent.demo.title}
+        </h2>
         <div className="mb-6">
           <video
             width="100%"
@@ -92,25 +63,14 @@ export default function Installation() {
             controls
             className="rounded-lg shadow-lg"
           >
-            <source src="/demos/setup.mov" type="video/mp4" />
+            <source src={installationContent.demo.videoPath} type="video/mp4" />
           </video>
         </div>
 
-        <h2 className="text-2xl font-semibold mb-4 mt-4">Key Notes</h2>
-
-        <p className="mb-6">
-          Keep in mind that the Docker container will run in the background. If
-          you need to stop the container, you can run the command{" "}
-          <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
-            docker stop cis2500
-          </code>
-          or click the stop button in Docker Desktop. Similarly, you can start
-          the container again with
-          <code className="bg-gray-800 text-white text-sm px-2 py-1 rounded ml-1">
-            docker start cis2500
-          </code>{" "}
-          or by clicking the play button.
-        </p>
+        <h2 className="text-2xl font-semibold mb-4 mt-4">
+          {installationContent.keyNotes.title}
+        </h2>
+        <p className="mb-6">{installationContent.keyNotes.description}</p>
       </section>
     </div>
   );

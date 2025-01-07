@@ -1,0 +1,74 @@
+{
+  "title": "GitLab Tutorial",
+  "sections": [
+    {
+      "heading": "What is GitLab?",
+      "content": "Similar to GitHub, GitLab is a web-based platform that provides a complete lifecycle toolchain for software development. It is an open-source solution that allows developers to collaborate, manage repositories, and automate workflows. GitLab integrates tools for version control, CI/CD, project management, and monitoring in one unified platform."
+    },
+    {
+      "heading": "Why do we use GitLab?",
+      "content": "We use GitLab for course assignments to manage and submit code. GitLab provides a centralized platform for students to collaborate, track changes, and submit assignments. It allows instructors to provide feedback, grade assignments, and monitor student progress. GitLab also provides a version control system that allows students to track changes, revert to previous versions, and collaborate on projects."
+    },
+    {
+      "heading": "Where can I access my GitLab account?",
+      "content": {
+        "text": "Every student at the University of Guelph has a GitLab account associated with their school email. You can log in to your GitLab account by visiting the following link:",
+        "link": {
+          "url": "https://gitlab.socs.uoguelph.ca",
+          "label": "GitLab Login"
+        }
+      }
+    },
+    {
+      "heading": "Tutorial",
+      "content": "Follow the steps below to learn how to use GitLab for course assignments. We'll go through an example of cloning an existing repository, adding and committing changes, and pushing updates to the remote repository.",
+      "steps": [
+        {
+          "text": "Clone the repository from GitLab:",
+          "code": "git clone https://gitlab.socs.uoguelph.ca/achow04/cis2500-gitlab-tutorial"
+        },
+        {
+          "text": "Navigate to the project directory:",
+          "code": "cd cis2500-gitlab-tutorial"
+        },
+        {
+          "text": "Create a new file in the project:",
+          "code": "touch helloWorld.c"
+        },
+        {
+          "text": "Open the file in a text editor and add some code:",
+          "code": "nano helloWorld.c"
+        },
+        {
+          "text": "Stage the changes (add the new file to the staging area):",
+          "code": "git add helloWorld.c"
+        },
+        {
+          "text": "Alternatively, you can stage all changes at once:",
+          "code": "git add ."
+        },
+        {
+          "text": "Commit the changes with a message describing your work:",
+          "code": "git commit -m '[Tutorial] Adds helloWorld.c'"
+        },
+        {
+          "text": "Push the changes to the remote repository:",
+          "code": "git push"
+        },
+        {
+          "text": "Check your changes in the repository by visiting the project page on GitLab."
+        }
+      ],
+      "images": [
+        {
+          "src": "../images/gitlab-tutorial-one.png",
+          "alt": "GitLab Login"
+        },
+        {
+          "src": "../images/gitlab-tutorial-two.png",
+          "alt": "GitLab Repository"
+        }
+      ]
+    }
+  ]
+}

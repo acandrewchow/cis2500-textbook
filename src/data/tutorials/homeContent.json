@@ -1,0 +1,17 @@
+[
+    {
+      "title": "SSH to Connect to the School's Linux Server",
+      "description": "Learn how to securely access the school's Linux servers using SSH via VS Code.",
+      "link": "/tutorials/ssh"
+    },
+    {
+      "title": "Connecting to NoMachine",
+      "description": "Use NoMachine to access the school's Linux servers with a GUI.",
+      "link": "/tutorials/nomachine"
+    },
+    {
+      "title": "Using GitLab",
+      "description": "Learn how to utilize GitLab for course assignments",
+      "link": "/tutorials/gitlab"
+    }
+  ]
