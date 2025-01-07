@@ -1,6 +1,6 @@
 import React from "react";
 import TableOfContents from "@/components/TableOfContents";
-import gitlabContent from "@/data/tutorials/gitlabContent.json";
+import gitlabContent from "@/data/tutorials/gitLabContent.json";
 
 export default function GitLabTutorial() {
   return (
