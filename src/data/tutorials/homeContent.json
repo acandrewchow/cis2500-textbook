@@ -6,7 +6,7 @@
     },
     {
       "title": "Connecting to NoMachine",
-      "description": "Use NoMachine to access the school's Linux servers with a GUI.",
+      "description": "Use NoMachine to access the school's Linux servers with a Graphical User Interface.",
       "link": "/tutorials/nomachine"
     },
     {

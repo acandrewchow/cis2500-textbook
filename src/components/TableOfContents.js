@@ -19,16 +19,18 @@ export default function TableOfContents() {
     { link: "tutorials", label: "Tutorials" },
   ];
 
-  /* update lectures to content */
   const topics = [
     { link: "topics/compilation", label: "Compilation" },
     { link: "topics/binary-files", label: "Binary Files" },
-    { link: "topics/dynamic-memory-allocation", label: "Dynamic Memory Allocation" },
+    {
+      link: "topics/dynamic-memory-allocation",
+      label: "Dynamic Memory Allocation",
+    },
     { link: "topics/recursion", label: "Recursion" },
     { link: "topics/linked-lists", label: "Linked Lists" },
     { link: "topics/stacks-and-queues", label: "Stacks and Queues" },
     { link: "topics/function-pointers", label: "Function Pointers" },
-    { link: "topics/search-and-sorting", label: "Algorithms - Searching & Sorting" },
+    { link: "topics/search-and-sorting", label: "Searching & Sorting" },
   ];
 
   const toggleMenu = () => {
@@ -110,6 +112,16 @@ export default function TableOfContents() {
                 className="text-lg text-white hover:text-blue-600"
               >
                 Quizzes
+              </Link>
+            </li>
+
+            <li className="mb-4 text-center">
+              <Link
+                href="/exercises/home"
+                onClick={() => setIsOpen(false)}
+                className="text-lg text-white hover:text-blue-600"
+              >
+                Exercises
               </Link>
             </li>
 
