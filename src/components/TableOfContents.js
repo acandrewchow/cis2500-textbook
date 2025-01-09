@@ -20,17 +20,17 @@ export default function TableOfContents() {
   ];
 
   const topics = [
-    { link: "topics/compilation", label: "Compilation" },
-    { link: "topics/binary-files", label: "Binary Files" },
+    { link: "/topics/compilation", label: "Compilation" },
+    { link: "/topics/binary-files", label: "Binary Files" },
     {
-      link: "topics/dynamic-memory-allocation",
+      link: "/topics/dynamic-memory-allocation",
       label: "Dynamic Memory Allocation",
     },
-    { link: "topics/recursion", label: "Recursion" },
-    { link: "topics/linked-lists", label: "Linked Lists" },
-    { link: "topics/stacks-and-queues", label: "Stacks and Queues" },
-    { link: "topics/function-pointers", label: "Function Pointers" },
-    { link: "topics/search-and-sorting", label: "Searching & Sorting" },
+    { link: "/topics/recursion", label: "Recursion" },
+    { link: "/topics/linked-lists", label: "Linked Lists" },
+    { link: "/topics/stacks-and-queues", label: "Stacks and Queues" },
+    { link: "/topics/function-pointers", label: "Function Pointers" },
+    { link: "/topics/search-and-sorting", label: "Searching & Sorting" },
   ];
 
   const toggleMenu = () => {
