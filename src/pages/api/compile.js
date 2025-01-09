@@ -4,6 +4,13 @@ const path = require('path');
 const os = require('os');
 
 /**
+ * Trims leading/trailing spaces from the string
+ */
+const trimOutput = (str) => {
+  return str.trim();
+};
+
+/**
  * API endpoint to compile, run C source code, and run test cases
  * 
  * @param {Object} req - The request object.
@@ -55,12 +62,23 @@ export default async (req, res) => {
               }
             });
 
+            const expectedTrimmed = trimOutput(expectedOutput);
+            const actualTrimmed = trimOutput(runResult);
+
+            const passed = expectedTrimmed === actualTrimmed;
+
             results.push({
               input,
               expectedOutput,
               actualOutput: runResult,
-              passed: runResult === expectedOutput,
+              passed,
             });
+
+            if (!passed) {
+              console.log('Expected:', expectedTrimmed);
+              console.log('Actual:', actualTrimmed);
+            }
+
           } catch (runError) {
             results.push({
               input,
