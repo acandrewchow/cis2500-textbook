@@ -90,5 +90,106 @@
       { "label": "D", "text": "To install the program" }
     ],
     "correctAnswer": "A"
+  },
+  {
+    "id": 9,
+    "text": "What is a structure in C programming?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "A data type that allows multiple variables of different types to be grouped together"
+      },
+      { "label": "B", "text": "A data type used only for integer variables" },
+      {
+        "label": "C",
+        "text": "A built-in function in C for string manipulation"
+      },
+      { "label": "D", "text": "An array of integers" }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 10,
+    "text": "Which keyword is used to define a structure in C?",
+    "choices": [
+      { "label": "A", "text": "struct" },
+      { "label": "B", "text": "structure" },
+      { "label": "C", "text": "typedef" },
+      { "label": "D", "text": "class" }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 11,
+    "text": "How do you access a member of a structure using a pointer to the structure?",
+    "choices": [
+      { "label": "A", "text": "Using the dot operator (.)" },
+      { "label": "B", "text": "Using the arrow operator (->)" },
+      { "label": "C", "text": "Using the colon operator (:)" },
+      { "label": "D", "text": "Using the asterisk operator (*)" }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 12,
+    "text": "How can you create a typedef for a structure?",
+    "choices": [
+      { "label": "A", "text": "typedef struct Name { ... } NewName;" },
+      { "label": "B", "text": "typedef Name struct { ... } NewName;" },
+      { "label": "C", "text": "struct typedef Name { ... } NewName;" },
+      { "label": "D", "text": "typedef { ... } struct Name NewName;" }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 13,
+    "text": "What happens if you try to access an uninitialized structure member?",
+    "choices": [
+      { "label": "A", "text": "It will cause a compilation error" },
+      { "label": "B", "text": "It will cause a segmentation fault" },
+      { "label": "C", "text": "It will result in undefined behavior" },
+      { "label": "D", "text": "It will default to zero" }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 14,
+    "text": "How can you initialize a structure in C?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "By assigning values directly when defining the structure"
+      },
+      {
+        "label": "B",
+        "text": "Using the dot operator to assign values to each member individually"
+      },
+      {
+        "label": "C",
+        "text": "Using an initializer list at the time of declaration"
+      },
+      { "label": "D", "text": "All of the above" }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 15,
+    "text": "Can structures in C contain arrays as members?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Yes, structures can contain arrays of fixed size"
+      },
+      { "label": "B", "text": "No, arrays cannot be members of structures" },
+      {
+        "label": "C",
+        "text": "Only pointers to arrays can be members of structures"
+      },
+      {
+        "label": "D",
+        "text": "Only integer arrays can be members of structures"
+      }
+    ],
+    "correctAnswer": "A"
   }
 ]

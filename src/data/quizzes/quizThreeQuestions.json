@@ -1,0 +1,215 @@
+[
+  {
+    "id": 1,
+    "text": "Which library must be included to use dynamic memory allocation functions in C?",
+    "choices": [
+      { "label": "A", "text": "<stdlib.h>" },
+      { "label": "B", "text": "<stdio.h>" },
+      { "label": "C", "text": "<string.h>" },
+      { "label": "D", "text": "<memory.h>" }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 2,
+    "text": "Which function is used to allocate a block of memory dynamically?",
+    "choices": [
+      { "label": "A", "text": "malloc()" },
+      { "label": "B", "text": "calloc()" },
+      { "label": "C", "text": "realloc()" },
+      { "label": "D", "text": "All of the above" }
+    ],
+    "correctAnswer": "D"
+  },
+  {
+    "id": 3,
+    "text": "What is the difference between malloc() and calloc()?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "malloc() initializes memory to zero, while calloc() does not"
+      },
+      {
+        "label": "B",
+        "text": "calloc() allocates memory and initializes it to zero, while malloc() does not"
+      },
+      {
+        "label": "C",
+        "text": "malloc() allocates memory in multiples of two, while calloc() does not"
+      },
+      {
+        "label": "D",
+        "text": "There is no difference between malloc() and calloc()"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 4,
+    "text": "What does the realloc() function do?",
+    "choices": [
+      { "label": "A", "text": "Allocates a new block of memory" },
+      { "label": "B", "text": "Frees a block of memory" },
+      { "label": "C", "text": "Resizes an existing block of memory" },
+      { "label": "D", "text": "Reinitializes all memory to zero" }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 5,
+    "text": "What should you do after using malloc(), calloc(), or realloc() to avoid memory leaks?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Use the free() function to deallocate the memory"
+      },
+      { "label": "B", "text": "Set the pointer to NULL" },
+      { "label": "C", "text": "Manually overwrite the allocated memory" },
+      {
+        "label": "D",
+        "text": "No action is needed; memory is automatically freed"
+      }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 6,
+    "text": "What happens if you attempt to free a NULL pointer?",
+    "choices": [
+      { "label": "A", "text": "It causes a segmentation fault" },
+      { "label": "B", "text": "It causes undefined behavior" },
+      { "label": "C", "text": "It does nothing and is safe to do" },
+      { "label": "D", "text": "It frees all allocated memory" }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 7,
+    "text": "What does malloc() return if it fails to allocate memory?",
+    "choices": [
+      { "label": "A", "text": "A pointer to zero" },
+      { "label": "B", "text": "NULL" },
+      { "label": "C", "text": "A segmentation fault" },
+      { "label": "D", "text": "An undefined value" }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 8,
+    "text": "Which of the following statements about dynamic memory allocation is true?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "The size of dynamically allocated memory can only be increased, not decreased"
+      },
+      {
+        "label": "B",
+        "text": "Memory allocated with malloc() is automatically freed when the program exits"
+      },
+      {
+        "label": "C",
+        "text": "Dynamically allocated memory must be explicitly freed by the programmer"
+      },
+      { "label": "D", "text": "calloc() cannot allocate memory for arrays" }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 9,
+    "text": "What happens if you free the same pointer twice?",
+    "choices": [
+      { "label": "A", "text": "The memory is freed twice" },
+      { "label": "B", "text": "It causes undefined behavior" },
+      { "label": "C", "text": "It causes a segmentation fault" },
+      { "label": "D", "text": "Nothing happens; the second free is ignored" }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 10,
+    "text": "What is a memory leak in C programming?",
+    "choices": [
+      { "label": "A", "text": "When a program accesses memory it doesn't own" },
+      {
+        "label": "B",
+        "text": "When a program loses a reference to dynamically allocated memory without freeing it"
+      },
+      {
+        "label": "C",
+        "text": "When memory allocation fails due to insufficient memory"
+      },
+      {
+        "label": "D",
+        "text": "When a program uses memory that has already been freed"
+      }
+    ],
+    "correctAnswer": "B"
+  },
+
+  {
+    "id": 11,
+    "text": "What will be the output of the following code?",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *ptr = malloc(4 * sizeof(int));\n    if (ptr == NULL) {\n        printf(\"Memory allocation failed\\n\");\n        return 1;\n    }\n\n    for (int i = 0; i < 4; i++) {\n        ptr[i] = i + 1;\n    }\n\n    for (int i = 0; i < 4; i++) {\n        printf(\"%d \", ptr[i]);\n    }\n\n    free(ptr);\n    return 0;\n}",
+    "choices": [
+      { "label": "A", "text": "1 2 3 4" },
+      { "label": "B", "text": "Memory allocation failed" },
+      { "label": "C", "text": "Undefined behavior" },
+      { "label": "D", "text": "Segmentation fault" }
+    ],
+    "correctAnswer": "A"
+  },
+  {
+    "id": 12,
+    "text": "What is the purpose of the free() function in the following code?",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *arr = malloc(5 * sizeof(int));\n    if (arr == NULL) {\n        return 1;\n    }\n\n    for (int i = 0; i < 5; i++) {\n        arr[i] = i;\n    }\n\n    free(arr);\n    return 0;\n}",
+    "choices": [
+      { "label": "A", "text": "It initializes the memory to zero" },
+      { "label": "B", "text": "It deallocates the memory allocated to 'arr'" },
+      {
+        "label": "C",
+        "text": "It prevents memory leaks by reusing the memory"
+      },
+      { "label": "D", "text": "It reallocates memory for 'arr'" }
+    ],
+    "correctAnswer": "B"
+  },
+  {
+    "id": 13,
+    "text": "What will the following code print?",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *ptr = malloc(sizeof(int));\n    if (ptr == NULL) {\n        printf(\"Memory allocation failed\\n\");\n        return 1;\n    }\n\n    *ptr = 42;\n    free(ptr);\n\n    printf(\"%d\\n\", *ptr);\n    return 0;\n}",
+    "choices": [
+      { "label": "A", "text": "42" },
+      { "label": "B", "text": "0" },
+      { "label": "C", "text": "Undefined behavior" },
+      { "label": "D", "text": "Segmentation fault" }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 14,
+    "text": "What is wrong with the following code?",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *ptr = malloc(5 * sizeof(int));\n    ptr[0] = 10;\n    ptr[1] = 20;\n\n    // Memory not freed\n    return 0;\n}",
+    "choices": [
+      { "label": "A", "text": "The program will crash because malloc() fails" },
+      { "label": "B", "text": "There is no error in the code" },
+      {
+        "label": "C",
+        "text": "It causes a memory leak as memory allocated by malloc() is not freed"
+      },
+      { "label": "D", "text": "It will result in a segmentation fault" }
+    ],
+    "correctAnswer": "C"
+  },
+  {
+    "id": 15,
+    "text": "What will the output of the following code be?",
+    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *arr = calloc(3, sizeof(int));\n    if (arr == NULL) {\n        return 1;\n    }\n\n    for (int i = 0; i < 3; i++) {\n        printf(\"%d \", arr[i]);\n    }\n\n    free(arr);\n    return 0;\n}",
+    "choices": [
+      { "label": "A", "text": "0 0 0" },
+      { "label": "B", "text": "Random values" },
+      { "label": "C", "text": "Compilation error" },
+      { "label": "D", "text": "Undefined behavior" }
+    ],
+    "correctAnswer": "A"
+  }
+]

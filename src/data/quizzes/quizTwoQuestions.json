@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "text": "What does the following code do?",
+      "code": "#include <stdio.h>\n\nint main() {\n    FILE *file = fopen(\"data.bin\", \"wb\");\n    if (file == NULL) {\n        printf(\"Could not open file.\\n\");\n        return 1;\n    }\n\n    int num = 42;\n    fwrite(&num, sizeof(int), 1, file);\n    fclose(file);\n    return 0;\n}",
+      "choices": [
+        { "label": "A", "text": "Writes the number 42 to a text file" },
+        { "label": "B", "text": "Writes the number 42 to a binary file" },
+        { "label": "C", "text": "Reads the number 42 from a binary file" },
+        { "label": "D", "text": "Writes a random number to a binary file" }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": 2,
+      "text": "What will the following code print if 'data.bin' contains the binary representation of the integer 123?",
+      "code": "#include <stdio.h>\n\nint main() {\n    FILE *file = fopen(\"data.bin\", \"rb\");\n    if (file == NULL) {\n        printf(\"Could not open file.\\n\");\n        return 1;\n    }\n\n    int num;\n    fread(&num, sizeof(int), 1, file);\n    fclose(file);\n\n    printf(\"%d\\n\", num);\n    return 0;\n}",
+      "choices": [
+        { "label": "A", "text": "123" },
+        { "label": "B", "text": "Binary representation of 123" },
+        { "label": "C", "text": "Garbage value" },
+        { "label": "D", "text": "Could not open file." }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": 3,
+      "text": "What is the purpose of the 'wb' mode in the fopen() function?",
+      "code": "FILE *file = fopen(\"file.bin\", \"wb\");",
+      "choices": [
+        { "label": "A", "text": "Opens a file for reading in binary mode" },
+        { "label": "B", "text": "Opens a file for writing in binary mode and overwrites the file if it exists" },
+        { "label": "C", "text": "Appends data to a binary file" },
+        { "label": "D", "text": "Opens a file for both reading and writing in binary mode" }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": 4,
+      "text": "What is the output of the following code if the binary file contains the integers 10, 20, and 30?",
+      "code": "#include <stdio.h>\n\nint main() {\n    FILE *file = fopen(\"numbers.bin\", \"rb\");\n    if (file == NULL) {\n        printf(\"Could not open file.\\n\");\n        return 1;\n    }\n\n    int num;\n    while (fread(&num, sizeof(int), 1, file)) {\n        printf(\"%d \", num);\n    }\n    fclose(file);\n    return 0;\n}",
+      "choices": [
+        { "label": "A", "text": "10 20 30" },
+        { "label": "B", "text": "Could not open file." },
+        { "label": "C", "text": "Binary data output" },
+        { "label": "D", "text": "Compilation error" }
+      ],
+      "correctAnswer": "A"
+    },
+    {
+      "id": 5,
+      "text": "What will happen if the following code tries to open a non-existent file in 'rb' mode?",
+      "code": "#include <stdio.h>\n\nint main() {\n    FILE *file = fopen(\"nonexistent.bin\", \"rb\");\n    if (file == NULL) {\n        printf(\"Could not open file.\\n\");\n        return 1;\n    }\n\n    fclose(file);\n    return 0;\n}",
+      "choices": [
+        { "label": "A", "text": "A new binary file will be created" },
+        { "label": "B", "text": "The program will print 'Could not open file.'" },
+        { "label": "C", "text": "The program will crash" },
+        { "label": "D", "text": "Undefined behavior" }
+      ],
+      "correctAnswer": "B"
+    },
+    {
+      "id": 6,
+      "text": "What is the purpose of the fseek() function in the following code?",
+      "code": "#include <stdio.h>\n\nint main() {\n    FILE *file = fopen(\"data.bin\", \"rb\");\n    if (file == NULL) {\n        return 1;\n    }\n\n    fseek(file, sizeof(int), SEEK_SET);\n    int num;\n    fread(&num, sizeof(int), 1, file);\n\n    printf(\"%d\\n\", num);\n    fclose(file);\n    return 0;\n}",
+      "choices": [
+        { "label": "A", "text": "It reads data from the file" },
+        { "label": "B", "text": "It moves the file pointer to a specific position" },
+        { "label": "C", "text": "It closes the file" },
+        { "label": "D", "text": "It clears the file content" }
+      ],
+      "correctAnswer": "B"
+    }
+  ]
