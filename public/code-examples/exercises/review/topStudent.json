@@ -1,0 +1,21 @@
+{
+  "title": "Top Student Finder",
+  "description": "Write the function definition for TopStudent that takes an array of students and returns the student with the highest GPA",
+  "codeFilePath": "/code-examples/exercises/review/topStudent.c",
+  "apiEndpoint": "/api/compile",
+  "isReadOnly": false,
+  "testCases": [
+    {
+      "input": "3.9 3.7 3.8",
+      "expectedOutput": "3.9"
+    },
+    {
+      "input": "4.0 3.6 3.9",
+      "expectedOutput": "4.0"
+    },
+    {
+      "input": "3.5 2.0 1.0",
+      "expectedOutput": "3.5"
+    }
+  ]
+}

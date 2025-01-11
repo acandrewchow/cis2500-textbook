@@ -1,0 +1,21 @@
+{
+  "title": "Find the Closest Number to the Average",
+  "description": "Write the function definition for findClosestToAverage that calculates the average of an array of 5 integers and finds the number closest to the average",
+  "codeFilePath": "/code-examples/exercises/review/findClosestToAverage.c",
+  "apiEndpoint": "/api/compile",
+  "isReadOnly": false,
+  "testCases": [
+    {
+      "input": "5 10 15 20 25",
+      "expectedOutput": "15"
+    },
+    {
+      "input": "2 4 6 8 10",
+      "expectedOutput": "6"
+    },
+    {
+      "input": "11 22 33 44 55",
+      "expectedOutput": "33"
+    }
+  ]
+}
