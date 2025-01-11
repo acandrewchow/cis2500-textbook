@@ -24,7 +24,7 @@ export default function TableOfContents() {
     { link: "/topics/binary-files", label: "Binary Files" },
     {
       link: "/topics/dynamic-memory-allocation",
-      label: "Dynamic Memory Allocation",
+      label: "Memory",
     },
     { link: "/topics/recursion", label: "Recursion" },
     { link: "/topics/linked-lists", label: "Linked Lists" },
