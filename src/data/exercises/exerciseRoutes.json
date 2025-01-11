@@ -4,7 +4,7 @@
       "exercises": [
         { "label": "Top Student", "link": "/exercises/review/topStudent" },
         { "label": "Sort Students", "link": "/exercises/review/sortStudents" },
-        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseThree" }
+        { "label": "Find Closest To Average", "link": "/exercises/review/findClosestToAverage" }
       ]
     },
     {
