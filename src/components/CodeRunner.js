@@ -3,7 +3,12 @@ import React, { useState, useEffect } from "react";
 import CodeMirror from "@uiw/react-codemirror";
 import { cpp } from "@codemirror/lang-cpp";
 
-export default function CodeRunner({ codeFilePath, apiEndpoint, isReadOnly, testCases }) {
+export default function CodeRunner({
+  codeFilePath,
+  apiEndpoint,
+  isReadOnly,
+  testCases,
+}) {
   const [code, setCode] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
@@ -26,7 +31,7 @@ export default function CodeRunner({ codeFilePath, apiEndpoint, isReadOnly, test
     fetchCode();
   }, [codeFilePath]);
 
-  const runCode = async () => {
+  const submitCode = async () => {
     setOutput("");
     setError("");
     setTestResults([]);
@@ -42,9 +47,9 @@ export default function CodeRunner({ codeFilePath, apiEndpoint, isReadOnly, test
 
       if (response.ok) {
         if (data.results) {
-          setTestResults(data.results); 
+          setTestResults(data.results);
         } else {
-          setOutput(data.output); 
+          setOutput(data.output);
         }
       } else {
         setError(data.error || "An unknown error occurred");
@@ -55,33 +60,33 @@ export default function CodeRunner({ codeFilePath, apiEndpoint, isReadOnly, test
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 p-8">
+    <div className="min-h-screen bg-zinc-800 text-gray-800 p-4">
       <div>
         <CodeMirror
-          readOnly={isReadOnly}
           value={code}
           onChange={(value) => setCode(value)}
           extensions={[cpp()]}
           theme="dark"
-          height="500px"
+          height="600px"
+          readOnly={isReadOnly}
         />
-        <button
-          onClick={runCode}
-          className="mt-4 px-4 py-2 bg-blue-500 text-white rounded"
-        >
-          Run Code
-        </button>
+        <div className="mt-4">
+          <button
+            onClick={submitCode}
+            className="px-4 py-2 bg-blue-500 text-white rounded"
+          >
+            Submit
+          </button>
+        </div>
       </div>
 
-      {/* Display Program Output */}
       {output && (
-        <div className="mt-4 p-4 bg-gray-700 rounded text-white">
+        <div className="mt-4 p-4 bg-zinc-700 rounded text-white">
           <h3 className="text-md font-bold">Program Output</h3>
           <code>{output}</code>
         </div>
       )}
 
-      {/* Display Error Messages */}
       {error && (
         <div className="mt-4 p-4 bg-red-100 rounded text-gray-800">
           <h3 className="text-md font-bold">Error:</h3>
@@ -89,40 +94,36 @@ export default function CodeRunner({ codeFilePath, apiEndpoint, isReadOnly, test
         </div>
       )}
 
-      {/* Display Test Case Results */}
-      {testResults.length > 0 && (
-  <div className="mt-4 p-4 bg-gray-700 rounded text-white">
-    <h3 className="text-md font-bold mb-4">Test Case Results</h3>
-    {testResults.map((result, index) => (
-      <div
-        key={index}
-        className={`mb-4 p-4 rounded border ${
-          result.passed ? "border-green-500" : "border-red-500"
-        }`}
-      >
-        <h4 className="text-lg font-semibold mb-2">
-          Test Case {index + 1}:{" "}
-          <span
-            className={`${
-              result.passed ? "text-green-400" : "text-red-400"
-            }`}
-          >
-            {result.passed ? "Passed" : "Failed"}
-          </span>
-        </h4>
-        <p>
-          <strong>Input:</strong> {result.input || "N/A"}
-        </p>
-        <p>
-          <strong>Expected Output:</strong> {result.expectedOutput || "N/A"}
-        </p>
-        <p>
-          <strong>Actual Output:</strong> {result.actualOutput || "Error"}
-        </p>
-      </div>
-    ))}
-  </div>
-)}
+      {testResults.map((result, index) => (
+        <div key={index} className="mb-2 p-2 rounded border mt-2 bg-zinc-700">
+          <h4 className="text-md font-semibold mb-1 text-white">
+            Test Case {index + 1}:{" "}
+            <span
+              className={`${result.passed ? "text-green-300" : "text-red-300"}`}
+            >
+              {result.passed ? "Passed" : "Failed"}
+            </span>
+          </h4>
+          <div className="text-white">
+            <strong>Input:</strong>
+            <pre className="bg-zinc-800 text-gray-200 p-1 rounded">
+              {result.input || "N/A"}
+            </pre>
+          </div>
+          <div className="text-white mt-1">
+            <strong>Expected Output:</strong>
+            <pre className="bg-zinc-800 text-gray-200 p-1 rounded">
+              {result.expectedOutput || "N/A"}
+            </pre>
+          </div>
+          <div className="text-white mt-1">
+            <strong>Program Output:</strong>
+            <pre className="bg-zinc-800 text-gray-200 p-1 rounded">
+              {result.actualOutput || "Error"}
+            </pre>
+          </div>
+        </div>
+      ))}
     </div>
   );
 }
