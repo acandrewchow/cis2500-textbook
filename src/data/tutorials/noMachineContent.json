@@ -1,0 +1,32 @@
+{
+    "title": "NoMachine Tutorial",
+    "intro": "Welcome to the NoMachine tutorial. Follow the steps below to get started.",
+    "steps": [
+      {
+        "title": "Step 1: Download NoMachine",
+        "content": "NoMachine is available for both Windows and MacOS, please visit the Wiki Socs to download the software.",
+        "link": {
+          "url": "https://wiki.socs.uoguelph.ca/techsupport/guides/nomachine",
+          "text": "Wiki Socs"
+        }
+      },
+      {
+        "title": "Step 2: Setup Configurations",
+        "content": "Follow the setup instructions provided on the website to set up NoMachine on your local machine."
+      },
+      {
+        "title": "Step 3: Connect to the School's Linux Servers",
+        "content": "Open NoMachine, enter the IP address of the linux servers, and follow the prompts to connect to the school's linux servers.",
+        "code": "nomachine.linux.socs.uoguelph.ca"
+      }
+    ],
+    "demo": {
+      "title": "Demo",
+      "video": {
+        "src": "/demos/noMachine.mov",
+        "type": "video/mp4",
+        "width": "100%",
+        "height": "auto"
+      }
+    }
+  }
