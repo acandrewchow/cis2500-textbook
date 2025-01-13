@@ -5,13 +5,14 @@ import CodingExercise from "@/components/CodingExercises";
 
 const ExercisePage = () => {
   const router = useRouter();
-  const { exerciseId } = router.query; 
+  const { exerciseId } = router.query;
 
   const exerciseData = {
     topStudent: "/code-examples/exercises/review/topStudent.json",
     sortStudents: "/code-examples/exercises/review/sortStudents.json",
     findClosestToAverage:
       "/code-examples/exercises/review/findClosestToAverage.json",
+    writeToBinary: "/code-examples/exercises/binary-files/writeToBinary.json",
   };
 
   const exerciseFilePath = exerciseData[exerciseId];

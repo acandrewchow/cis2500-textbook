@@ -1,0 +1,21 @@
+{
+  "title": "Write Integers to a Binary File",
+  "description": "Write the function definition for writeIntegersToBinaryFile that takes an array of 5 integers and writes them to a binary file. The function should print the integers written to the binary file, each one on a separate line",
+  "codeFilePath": "/code-examples/exercises/binary-files/writeToBinary.c",
+  "apiEndpoint": "/api/compile",
+  "isReadOnly": false,
+  "testCases": [
+    {
+      "input": "5 10 15 20 25",
+      "expectedOutput": "5\n10\n15\n20\n25\n"
+    },
+    {
+      "input": "1 2 3 4 5",
+      "expectedOutput": "1\n2\n3\n4\n5\n"
+    },
+    {
+      "input": "100 200 300 400 500",
+      "expectedOutput": "100\n200\n300\n400\n500\n"
+    }
+  ]
+}

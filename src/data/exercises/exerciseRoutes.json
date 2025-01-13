@@ -2,15 +2,15 @@
     {
       "name": "Structures",
       "exercises": [
-        { "label": "Top Student", "link": "/exercises/review/topStudent" },
-        { "label": "Sort Students", "link": "/exercises/review/sortStudents" },
-        { "label": "Find Closest To Average", "link": "/exercises/review/findClosestToAverage" }
+        { "label": "Top Student", "link": "/exercises/topStudent" },
+        { "label": "Sort Students", "link": "/exercises/sortStudents" },
+        { "label": "Find Closest To Average", "link": "/exercises/findClosestToAverage" }
       ]
     },
     {
       "name": "Binary Files",
       "exercises": [
-        { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
+        { "label": "Write To Binary File", "link": "/exercises/writeToBinary" },
         { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
         { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
       ]
