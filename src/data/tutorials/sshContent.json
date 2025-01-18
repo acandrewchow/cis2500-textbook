@@ -1,0 +1,53 @@
+{
+    "title": "SSH via VS Code",
+    "sections": [
+      {
+        "heading": "What is SSH?",
+        "content": "SSH, or Secure Shell, is a protocol used to securely access and manage devices or servers over a network. It provides encrypted communication between a client and a remote server. SSH is widely used for tasks such as managing servers remotely and transferring files securely between systems. In VS Code, SSH enables developers to connect directly to remote servers for development purposes. By using the Remote - SSH extension, you can open a remote folder directly in VS Code, debug, edit, and manage files on the remote server without leaving your local development environment."
+      },
+      {
+        "heading": "Where can I install the Remote - SSH Extension?",
+        "content": {
+          "text": "To install the Remote - SSH extension, open VS Code and search for 'Remote - SSH' in the Extensions view, then install it from Microsoft.",
+          "link": {
+            "url": "https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh",
+            "label": "Remote - SSH Extension on VS Code Marketplace"
+          }
+        }
+      },
+      {
+        "heading": "Tutorial",
+        "content": "Follow the steps below to use SSH in VS Code to connect to a remote server and work on your projects. Keep in mind, if you are off-campus, you will need to connect to the VPN first.",
+        "steps": [
+          {
+            "text": "Install the Remote - SSH extension in VS Code.",
+            "image": {
+              "src": "../images/ssh-tutorial-one.png",
+              "alt": "Installing Remote - SSH Extension"
+            }
+          },
+          {
+            "text": "Edit your `~/.ssh/config` to add your remote server details.",
+            "image": {
+              "src": "../images/ssh-tutorial-two.png",
+              "alt": "Editing SSH Config"
+            }
+          },
+          {
+            "text": "Press `F1` or `Ctrl+Shift+P` in VS Code and select 'Remote-SSH: Connect to Host...'. Choose your server or manually enter the info.",
+            "image": {
+              "src": "../images/ssh-tutorial-three.png",
+              "alt": "Connecting to Remote Host"
+            }
+          },
+          {
+            "text": "Once connected, you can open files, run commands, and work directly within VS Code.",
+            "image": {
+              "src": "../images/ssh-tutorial-four.png",
+              "alt": "VS Code Connected to Remote Host"
+            }
+          }
+        ]
+      }
+    ]
+  }
