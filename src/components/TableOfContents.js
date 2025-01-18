@@ -13,12 +13,6 @@ export default function TableOfContents() {
   const [isOpen, setIsOpen] = useState(false);
   const [isTopicsOpen, setIsTopicsOpen] = useState(false);
 
-  const items = [
-    { link: "/", label: "Home" },
-    { link: "lectures/resources", label: "Resources" },
-    { link: "tutorials", label: "Tutorials" },
-  ];
-
   const topics = [
     { link: "/topics/compilation", label: "Compilation" },
     { link: "/topics/binary-files", label: "Binary Files" },

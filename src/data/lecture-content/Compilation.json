@@ -1,39 +1,37 @@
 {
   "title": "Compilation",
-  "makefileSection": {
-    "title": "Introduction to Makefiles",
-    "content": "One of the tools that can help automate the compilation process and simplify working with larger projects is Makefiles. A Makefile is a file used by the 'make' utility to automate the building (compiling and linking) of programs. It contains rules and instructions on how to compile and link the different parts of a program. In large projects, where you have many .c files, Makefiles help ensure that only the necessary files are recompiled when changes are made. This saves time and prevents unnecessary recompilation.",
-    "makefileParts": {
-      "variables": "Variables are used to store values like compiler flags or file names.",
-      "rules": "Rules define how files should be compiled. Each rule has a target (the file to be built), dependencies (files that are needed for the target), and the command to build the target.",
-      "commands": "Commands are the specific shell commands that the Makefile will run when it executes the rule."
-    },
-    "example": {
-      "makefile": "CC = gcc\nCFLAGS = -std=c99 -Wall\n\nall: program\n\nprogram: program.o\n\t$(CC) $(CFLAGS) program.o -o program\n\nprogram.o: program.c\n\t$(CC) $(CFLAGS) -c program.c\n\nclean:\n\trm -f *.o program",
-      "explanation": {
-        "CC": "The compiler (gcc in this case).",
-        "CFLAGS": "Compiler flags (-std=c99 ensures the use of the C99 standard, and -Wall enables all warnings).",
-        "all": "The default target that will be built when you run make. It depends on the program target.",
-        "program": "This target depends on program.o, and the command to build it is gcc program.o -o program.",
-        "clean": "A special target that removes all object files and the executable. You can run this with make clean to clean up the directory."
+  "sections": [
+    {
+      "title": "Introduction to Makefiles",
+      "content": "One of the tools that can help automate the compilation process and simplify working with larger projects is Makefiles. A Makefile is a file used by the 'make' utility to automate the building (compiling and linking) of programs. It contains rules and instructions on how to compile and link the different parts of a program. In large projects, where you have many .c files, Makefiles help ensure that only the necessary files are recompiled when changes are made. This saves time and prevents unnecessary recompilation.",
+      "list": [
+        "Variables are used to store values like compiler flags or file names.",
+        "Rules define how files should be compiled. Each rule has a target (the file to be built), dependencies (files that are needed for the target), and the command to build the target.",
+        "Commands are the specific shell commands that the Makefile will run when it executes the rule."
+      ],
+      "codeExample": {
+        "title": "Makefile Example",
+        "code": "CC = gcc\nCFLAGS = -std=c99 -Wall\n\nall: program\n\nprogram: program.o\n\t$(CC) $(CFLAGS) program.o -o program\n\nprogram.o: program.c\n\t$(CC) $(CFLAGS) -c program.c\n\nclean:\n\trm -f *.o program",
+        "explanation": "This Makefile defines the compiler (CC) as gcc and uses the CFLAGS variable to specify compiler options such as using the C99 standard and enabling warnings. The 'all' target specifies that the default build will produce the program executable, which depends on program.o. The clean target provides a command to remove object files and the compiled program for cleanup purposes."
       }
+    },
+    {
+      "title": "Why Use Makefiles?",
+      "content": "Using Makefiles is beneficial for several reasons:",
+      "list": [
+        "Automation: It automates the compilation process, saving you from having to type out long commands every time you need to compile your program.",
+        "Efficiency: 'make' will only recompile the files that have changed, instead of recompiling the entire program. This is especially useful for larger projects.",
+        "Consistency: Makefiles provide a standardized way to manage the build process across different machines and developers."
+      ]
+    },
+    {
+      "title": "Makefile Best Practices",
+      "content": "Follow these best practices to create efficient Makefiles:",
+      "list": [
+        "Use Variables: Variables make your Makefile more flexible and easier to maintain.",
+        "Modularize Your Project: If your project grows large, break it up into multiple subdirectories and use Makefiles in each subdirectory.",
+        "Use Dependencies Wisely: Make sure the dependencies are correctly set to avoid unnecessary recompilation."
+      ]
     }
-  },
-  "makefileBenefits": {
-    "title": "Why Use Makefiles?",
-    "content": [
-      "Using Makefiles is beneficial for several reasons:",
-      "1. Automation: It automates the compilation process, saving you from having to type out long commands every time you need to compile your program.",
-      "2. Efficiency: 'make' will only recompile the files that have changed, instead of recompiling the entire program. This is especially useful for larger projects.",
-      "3. Consistency: Makefiles provide a standardized way to manage the build process across different machines and developers."
-    ]
-  },
-  "bestPractices": {
-    "title": "Makefile Best Practices",
-    "content": [
-      "1. Use Variables: Variables make your Makefile more flexible and easier to maintain.",
-      "2. Modularize Your Project: If your project grows large, break it up into multiple subdirectories and use Makefiles in each subdirectory.",
-      "3. Use Dependencies Wisely: Make sure the dependencies are correctly set to avoid unnecessary recompilation."
-    ]
-  }
+  ]
 }
