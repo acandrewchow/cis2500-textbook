@@ -121,16 +121,6 @@ export default function TableOfContents() {
 
             <li className="mb-4 text-center">
               <Link
-                href="/resources"
-                onClick={() => setIsOpen(false)}
-                className="text-lg text-white hover:text-blue-600"
-              >
-                Resources
-              </Link>
-            </li>
-
-            <li className="mb-4 text-center">
-              <Link
                 href="/tutorials/home"
                 onClick={() => setIsOpen(false)}
                 className="text-lg text-white hover:text-blue-600"
