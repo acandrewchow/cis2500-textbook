@@ -1,0 +1,52 @@
+{
+  "title": "Binary Files",
+  "sections": [
+    {
+      "title": "What are Binary Files?",
+      "content": "Binary files are files that store data in a format that is not human-readable. Unlike text files, which store characters as plain text, binary files store data as a sequence of bytes, which can represent anything from text, images, or videos to compiled programs.",
+      "list": [
+        "Binary files are compact and efficient.",
+        "They can store non-text data such as images, audio, or executables.",
+        "Accessing data in binary files requires understanding the underlying structure of the data."
+      ]
+    },
+    {
+      "title": "Difference Between Text and Binary Files",
+      "content": "Text files and binary files have fundamental differences in how data is stored and processed:",
+      "list": [
+        "Text Files: Store characters encoded in formats like ASCII or UTF-8.",
+        "Binary Files: Store raw byte data, which can represent any type of information.",
+        "Text Files: Easier to edit and read manually.",
+        "Binary Files: Efficient for storage and processing but require specific tools or programs to interpret."
+      ]
+    },
+    {
+      "title": "Working with Binary Files in C",
+      "content": "To work with binary files in C, you need to use the `fopen` function with the appropriate mode ('rb' for reading, 'wb' for writing, and 'ab' for appending).",
+      "codeExample": {
+        "title": "Reading from and Writing to Binary Files",
+        "code": "#include <stdio.h>\n\nint main() {\n    FILE *file;\n    int data = 12345;\n\n    // Writing to a binary file\n    file = fopen(\"data.bin\", \"wb\");\n    if (file) {\n        fwrite(&data, sizeof(int), 1, file);\n        fclose(file);\n    }\n\n    // Reading from a binary file\n    file = fopen(\"data.bin\", \"rb\");\n    if (file) {\n        fread(&data, sizeof(int), 1, file);\n        fclose(file);\n        printf(\"Data: %d\\n\", data);\n    }\n\n    return 0;\n}",
+        "explanation": "fopen opens a file with the specified mode ('wb' for writing binary, 'rb' for reading binary). fwrite writes raw binary data to the file, in this case an integer. fread reads raw binary data from the file, specifically an integer."
+      }
+    },
+    {
+      "title": "Advantages of Binary Files",
+      "content": "Binary files have several advantages over text files:",
+      "list": [
+        "Compact Storage: Binary files use less space since they store data in raw byte format.",
+        "Faster Processing: Binary files are more efficient to read and write since there is no encoding or decoding step.",
+        "Flexible Data Types: Binary files can store any data type, such as structs or raw image data."
+      ]
+    },
+    {
+      "title": "Best Practices for Binary Files",
+      "content": "To effectively work with binary files, follow these best practices:",
+      "list": [
+        "Always check if the file was successfully opened before performing any operations.",
+        "Close the file using `fclose` to ensure data integrity and release resources.",
+        "Use appropriate file modes (e.g., 'rb', 'wb') to avoid accidental overwriting or corruption.",
+        "Be mindful of the file structure and use the correct data type sizes when reading and writing."
+      ]
+    }
+  ]
+}

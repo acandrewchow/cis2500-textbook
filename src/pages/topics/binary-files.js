@@ -1,12 +1,9 @@
-import React from 'react';
+import React from "react";
+import Lecture from "@/components/Lecture";
+import BinaryFilesContent from "@/data/lecture-content/BinaryFiles.json";
 
 const BinaryFiles = () => {
-    return (
-        <div>
-            <h1>Binary Files</h1>
-            <p>This section will cover topics related to binary files.</p>
-        </div>
-    );
+  return <Lecture content={BinaryFilesContent} />;
 };
 
 export default BinaryFiles;
