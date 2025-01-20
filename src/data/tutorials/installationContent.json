@@ -1,53 +1,48 @@
 {
-    "title": "Installation Instructions",
-    "prerequisites": {
-      "title": "Prerequisites",
-      "description": "Before you can set up the interactive textbook locally, ensure you have the following installed:",
-      "items": [
-        {
-          "label": "Git Version Control",
-          "link": "https://git-scm.com/download"
-        },
-        {
-          "label": "Docker",
-          "link": "https://www.docker.com/products/docker-desktop"
-        }
-      ]
-    },
-    "steps": {
-      "title": "Steps to Install",
-      "description": "Follow these steps to get the interactive textbook up and running:",
-      "items": [
-        {
-          "text": "Clone the repository from GitHub -",
-          "code": "git clone github.com/acandrewchow/cis2500-textbook"
-        },
-        {
-          "text": "Navigate to the project directory",
-          "code": "cd cis2500-textbook"
-        },
-        {
-          "text": "Run the command",
-          "code": "docker build -t cis2500-textbook .",
-          "explanation": "to build the initial image for the textbook"
-        },
-        {
-          "text": "Run",
-          "code": "docker run --name cis2500 -p 3000:3000 cis2500-textbook",
-          "explanation": "to set up the Docker container on your local machine"
-        },
-        {
-          "text": "Open your browser and navigate to",
-          "code": "http://localhost:3000"
-        }
-      ]
-    },
-    "demo": {
-      "title": "Demo",
-      "videoPath": "/demos/setup.mov"
-    },
-    "keyNotes": {
-      "title": "Key Notes",
-      "description": "Keep in mind that the Docker container will run in the background. If you need to stop the container, you can run the command `docker stop cis2500` or click the stop button in Docker Desktop. Similarly, you can start the container again with `docker start cis2500` or by clicking the play button."
-    }
+  "title": "Installation Instructions",
+  "prerequisites": {
+    "title": "Prerequisites",
+    "description": "Before you can set up the interactive textbook locally, ensure you have the following installed:",
+    "items": [
+      {
+        "label": "Git Version Control",
+        "link": "https://git-scm.com/download"
+      },
+      {
+        "label": "Docker",
+        "link": "https://www.docker.com/products/docker-desktop"
+      }
+    ]
+  },
+  "steps": {
+    "title": "Steps to Install",
+    "description": "Follow these steps to get the interactive textbook up and running:",
+    "items": [
+      {
+        "text": "Clone the repository from GitHub -",
+        "code": "git clone github.com/acandrewchow/cis2500-textbook"
+      },
+      {
+        "text": "Navigate to the project directory",
+        "code": "cd cis2500-textbook"
+      },
+      {
+        "text": "Run the command",
+        "code": "docker compose up -d",
+        "explanation": "to build the docker comtainer and image"
+      },
+      {
+        "text": "Open your browser and navigate to",
+        "code": "http://localhost:3000"
+      }
+    ]
+  },
+  "demo": {
+    "title": "Demo",
+    "videoPath": "/demos/setup.mov"
+  },
+  "keyNotes": {
+    "title": "Key Notes",
+    "description": "Keep in mind that the Docker container will run in the background. If you need to stop the container you can run `docker compose stop`"
   }
+}
