@@ -2,7 +2,7 @@
   "title": "Sort Students by GPA",
   "description": "Write the function definition for sortStudents to sort an array of students by their GPA in descending order.",
   "codeFilePath": "/code-examples/exercises/review/sortStudents.c",
-  "solutionFilePath": "/code-examples/exercise-answers/sortStudentsAnswer package.json.c",
+  "solutionFilePath": "/code-examples/exercise-answers/sortStudentsAnswer.c",
   "apiEndpoint": "/api/compile",
   "isReadOnly": false,
   "testCases": [
