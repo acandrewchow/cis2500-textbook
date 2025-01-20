@@ -1,9 +1,17 @@
 {
   "title": "Find the Closest Number to the Average",
-  "description": "Write the function definition for findClosestToAverage that calculates the average of an array of 5 integers and finds the number closest to the average",
+  "description": "Write the function definition for findClosestToAverage that calculates the average of an array of 5 integers and finds the number closest to the average.",
   "codeFilePath": "/code-examples/exercises/review/findClosestToAverage.c",
+  "solutionFilePath": "/code-examples/exercise-answers/findClosestToAverageAnswer.c",
   "apiEndpoint": "/api/compile",
   "isReadOnly": false,
+  "hints": [
+    "1: Calculate the average by summing the numbers and dividing by the number of elements (5).",
+    "2: Use the absolute difference to determine which number is closest to the average.",
+    "3: Iterate through the array and track the smallest difference along with the corresponding number.",
+    "4: Be cautious of integer division when calculating the average; consider using a float or double.",
+    "5: Handle edge cases, such as when two numbers are equidistant from the average."
+  ],
   "testCases": [
     {
       "input": "5 10 15 20 25",

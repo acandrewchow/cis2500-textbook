@@ -1,7 +1,8 @@
 {
   "title": "Write Integers to a Binary File",
-  "description": "Write the function definition for writeIntegersToBinaryFile that takes an array of 5 integers and writes them to a binary file. The function should print the integers written to the binary file, each one on a separate line",
+  "description": "Write the function definition for writeIntegersToBinaryFile that takes an array of 5 integers and writes them to a binary file. The function should print the integers written to the binary file, each one on a separate line.",
   "codeFilePath": "/code-examples/exercises/binary-files/writeToBinary.c",
+  "solutionFilePath": "/code-examples/exercise-answers/writeToBinaryAnswer.c",
   "apiEndpoint": "/api/compile",
   "isReadOnly": false,
   "testCases": [
@@ -17,5 +18,11 @@
       "input": "100 200 300 400 500",
       "expectedOutput": "100\n200\n300\n400\n500\n"
     }
+  ],
+  "hints": [
+    "Use fopen with 'wb' mode to open the binary file for writing.",
+    "Loop through the integers and use fwrite to write each integer to the file.",
+    "Print each integer to the console using printf before writing it to the file.",
+    "Ensure the file is closed properly using fclose after all integers are written."
   ]
 }

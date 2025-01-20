@@ -1,7 +1,8 @@
 {
   "title": "Top Student Finder",
-  "description": "Write the function definition for TopStudent that takes an array of students and returns the student with the highest GPA",
+  "description": "Write the function definition for TopStudent that takes an array of students and returns the student with the highest GPA.",
   "codeFilePath": "/code-examples/exercises/review/topStudent.c",
+  "solutionFilePath": "/code-examples/exercise-answers/topStudentAnswer.c",
   "apiEndpoint": "/api/compile",
   "isReadOnly": false,
   "testCases": [
@@ -17,5 +18,10 @@
       "input": "3.5 2.0 1.0",
       "expectedOutput": "3.5"
     }
+  ],
+  "hints": [
+    "Use a variable to keep track of the highest GPA encountered so far while iterating through the array.",
+    "Compare each student's GPA with the current highest GPA and update the variable if a higher GPA is found.",
+    "Return the student with the highest GPA after the loop completes."
   ]
 }
