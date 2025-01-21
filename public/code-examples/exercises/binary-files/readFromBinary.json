@@ -20,8 +20,6 @@
     }
   ],
   "hints": [
-    "Use fopen with 'wb' mode to open the binary file for writing and 'rb' mode for reading.",
-    "In writeIntegersToBinaryFile, loop through the integers and use fwrite to write each integer to the file.",
     "Use ftell and fseek in readIntegersFromBinaryFile to determine the size of the file and calculate the number of integers stored.",
     "Loop through the file, using fread to read and print each integer.",
     "Ensure the file is closed properly using fclose in both functions."
