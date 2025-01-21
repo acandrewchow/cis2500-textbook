@@ -13,6 +13,7 @@ const ExercisePage = () => {
     findClosestToAverage:
       "/code-examples/exercises/review/findClosestToAverage.json",
     writeToBinary: "/code-examples/exercises/binary-files/writeToBinary.json",
+    readFromBinary: "/code-examples/exercises/binary-files/readFromBinary.json",
   };
 
   const exerciseFilePath = exerciseData[exerciseId];

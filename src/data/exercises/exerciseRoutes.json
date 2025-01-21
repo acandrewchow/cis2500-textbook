@@ -11,7 +11,7 @@
       "name": "Binary Files",
       "exercises": [
         { "label": "Write To Binary File", "link": "/exercises/writeToBinary" },
-        { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
+        { "label": "Reading from Binary File", "link": "/exercises/readFromBinary" },
         { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
       ]
     },
