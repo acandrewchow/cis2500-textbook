@@ -9,7 +9,8 @@
       { "label": "D", "text": "mingw std=c99 filename.c" },
       { "label": "E", "text": "None of the above" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "The correct command to compile C code with the C99 standard and enable all warnings is 'gcc -std=c99 -Wall filename.c'. This ensures that the program is compiled with C99 standards and shows all warnings during compilation."
   },
   {
     "id": 2,
@@ -20,7 +21,8 @@
       { "label": "C", "text": "To run the code" },
       { "label": "D", "text": "To debug the code" }
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "explanation": "A Makefile is used to organize and automate the code compilation process. It defines rules for how to compile and link the program, making it easier to build large projects."
   },
   {
     "id": 3,
@@ -31,7 +33,8 @@
       { "label": "C", "text": "make build" },
       { "label": "D", "text": "make run" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "'make clean' is the command used to remove compiled object files and clean up the project directory, helping to ensure that the next build starts with fresh files."
   },
   {
     "id": 4,
@@ -42,7 +45,8 @@
       { "label": "C", "text": "install" },
       { "label": "D", "text": "build" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "The default target in a Makefile is usually 'all', which is used to specify the general build process, compiling all necessary files and generating the final executable."
   },
   {
     "id": 5,
@@ -53,7 +57,8 @@
       { "label": "C", "text": "-Wall" },
       { "label": "D", "text": "-std=c99" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "The '-g' flag is used to include debugging information in the compiled code, which is necessary for debugging the program with a debugger such as gdb."
   },
   {
     "id": 6,
@@ -64,18 +69,20 @@
       { "label": "C", "text": "Includes debugging information" },
       { "label": "D", "text": "Specifies the C standard to use" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "The '-Wall' flag enables all compiler warnings, helping developers identify potential issues in the code early during the compilation process."
   },
   {
     "id": 7,
-    "text": "Which command is used to compile a C program with with multiple source files that does not containt the default executable?",
+    "text": "Which command is used to compile a C program with multiple source files that does not contain the default executable?",
     "choices": [
       { "label": "A", "text": "gcc -std=c99 -Wall file1.c file2.c -o output" },
       { "label": "B", "text": "gcc -Wall -std=c99 -c file1.c file2.c" },
       { "label": "C", "text": "gcc -std=c99 -Wall -o file1.c file2.c" },
       { "label": "D", "text": "gcc -Wall -std=c99 file1.c file2.c" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "The command 'gcc -std=c99 -Wall file1.c file2.c -o output' is used to compile multiple source files and produce an executable with a specified name ('output'). The '-o' flag is used to specify the output file name."
   },
   {
     "id": 8,
@@ -89,7 +96,8 @@
       { "label": "C", "text": "To run the code" },
       { "label": "D", "text": "To install the program" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "The 'clean' target in a Makefile is typically used to remove compiled files, object files, and other generated files, cleaning up the directory before a fresh build."
   },
   {
     "id": 9,
@@ -106,7 +114,8 @@
       },
       { "label": "D", "text": "An array of integers" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "A structure in C is a data type that allows multiple variables of different types to be grouped together under one name, making it easier to organize complex data."
   },
   {
     "id": 10,
@@ -117,7 +126,8 @@
       { "label": "C", "text": "typedef" },
       { "label": "D", "text": "class" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "The keyword 'struct' is used to define a structure in C. It allows grouping variables of different types under one name."
   },
   {
     "id": 11,
@@ -128,7 +138,8 @@
       { "label": "C", "text": "Using the colon operator (:)" },
       { "label": "D", "text": "Using the asterisk operator (*)" }
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "explanation": "When using a pointer to a structure, the arrow operator (->) is used to access members of the structure. This is the correct way to access structure members via a pointer."
   },
   {
     "id": 12,
@@ -139,7 +150,8 @@
       { "label": "C", "text": "struct typedef Name { ... } NewName;" },
       { "label": "D", "text": "typedef { ... } struct Name NewName;" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "To create a typedef for a structure, you use 'typedef struct Name { ... } NewName;', which defines a new type name for the structure 'Name' as 'NewName'."
   },
   {
     "id": 13,
@@ -150,7 +162,8 @@
       { "label": "C", "text": "It will result in undefined behavior" },
       { "label": "D", "text": "It will default to zero" }
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "explanation": "Accessing an uninitialized structure member will lead to undefined behavior, meaning that the program may behave unpredictably or crash."
   },
   {
     "id": 14,
@@ -170,7 +183,8 @@
       },
       { "label": "D", "text": "All of the above" }
     ],
-    "correctAnswer": "D"
+    "correctAnswer": "D",
+    "explanation": "You can initialize a structure in C by assigning values directly during definition, using the dot operator to assign values to members, or using an initializer list at the time of declaration."
   },
   {
     "id": 15,
@@ -190,6 +204,7 @@
         "text": "Only integer arrays can be members of structures"
       }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "Structures in C can contain arrays as members, but the arrays must have a fixed size. This allows structures to hold multiple related values of the same type."
   }
 ]

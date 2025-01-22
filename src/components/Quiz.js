@@ -7,6 +7,7 @@ Component that accepts a list of questions for a quiz
 const Quiz = ({ questions }) => {
   const [answers, setAnswers] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showFeedback, setShowFeedback] = useState({});
 
   const handleAnswer = (questionId, choiceLabel) => {
     setAnswers((prevAnswers) => ({
@@ -22,6 +23,14 @@ const Quiz = ({ questions }) => {
   const handleReset = () => {
     setAnswers({});
     setIsSubmitted(false);
+    setShowFeedback({});
+  };
+
+  const handleShowFeedback = (questionId) => {
+    setShowFeedback((prevFeedback) => ({
+      ...prevFeedback,
+      [questionId]: !prevFeedback[questionId],
+    }));
   };
 
   const calculateScore = () => {
@@ -77,6 +86,21 @@ const Quiz = ({ questions }) => {
                   </label>
                 ))}
               </div>
+              {isSubmitted && question.explanation && (
+                <div className="mt-4">
+                  <button
+                    onClick={() => handleShowFeedback(question.id)}
+                    className="px-4 py-2 bg-yellow-400 text-black rounded-lg hover:bg-yellow-400 transition duration-200"
+                  >
+                    {showFeedback[question.id] ? "Hide Feedback" : "Show Feedback"}
+                  </button>
+                  {showFeedback[question.id] && (
+                    <div className="mt-2 p-4 bg-yellow-100 text-black rounded-lg">
+                      <strong>Explanation:</strong> {question.explanation}
+                    </div>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>
