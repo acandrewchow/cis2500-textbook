@@ -13,7 +13,7 @@ FROM node:18-alpine AS runner
 
 WORKDIR /app
 
-RUN apk add --no-cache gcc g++ make
+RUN apk add --no-cache gcc g++ make valgrind
 
 COPY --from=builder /app/ ./
 
