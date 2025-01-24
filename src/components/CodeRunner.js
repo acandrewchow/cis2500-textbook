@@ -7,11 +7,13 @@ export default function CodeRunner({
   codeFilePath,
   apiEndpoint,
   isReadOnly,
+  isValgrindEnabled,
   testCases,
 }) {
   const [code, setCode] = useState("");
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
+  const [valgrindOutput, setValgrindOutput] = useState("");
   const [testResults, setTestResults] = useState([]);
 
   useEffect(() => {
@@ -59,6 +61,32 @@ export default function CodeRunner({
     }
   };
 
+  const runValgrind = async () => {
+    setValgrindOutput("");
+    setError("");
+
+    try {
+      const response = await fetch("/api/valgrind", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ code }),
+      });
+
+      const data = await response.json();
+
+      console.log(data);
+
+      if (response.ok) {
+        console.log(data.valgrindOutput);
+        setValgrindOutput(data.valgrindOutput);
+      } else {
+        setError(data.error || "Failed to run Valgrind");
+      }
+    } catch (err) {
+      setError("Failed to connect to the server for Valgrind");
+    }
+  };
+
   return (
     <div className="min-h-screen bg-zinc-800 text-gray-800 p-4">
       <div>
@@ -70,13 +98,23 @@ export default function CodeRunner({
           height="600px"
           readOnly={isReadOnly}
         />
-        <div className="mt-4">
-          <button
-            onClick={submitCode}
-            className="px-4 py-2 bg-blue-500 text-white rounded"
-          >
-            Submit
-          </button>
+        <div className="mt-4 flex gap-4">
+          {!isValgrindEnabled && (
+            <button
+              onClick={submitCode}
+              className="px-4 py-2 bg-blue-500 text-white rounded"
+            >
+              Submit
+            </button>
+          )}
+          {isValgrindEnabled && (
+            <button
+              onClick={runValgrind}
+              className="px-4 py-2 bg-purple-500 text-white rounded"
+            >
+              Run Valgrind
+            </button>
+          )}
         </div>
       </div>
 
@@ -84,6 +122,13 @@ export default function CodeRunner({
         <div className="mt-4 p-4 bg-zinc-700 rounded text-white">
           <h3 className="text-md font-bold">Program Output</h3>
           <code>{output}</code>
+        </div>
+      )}
+
+      {valgrindOutput && (
+        <div className="mt-4 p-4 bg-zinc-700 rounded text-white">
+          <h3 className="text-md font-bold">Valgrind</h3>
+          <pre>{valgrindOutput}</pre>
         </div>
       )}
 
