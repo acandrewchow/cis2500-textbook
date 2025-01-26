@@ -13,5 +13,10 @@
       "title": "Using GitLab",
       "description": "Learn how to utilize GitLab for course assignments",
       "link": "/tutorials/gitlab"
+    },
+    {
+      "title": "Valgrind",
+      "description": "Valgrind is a powerful tool for debugging.",
+      "link": "/tutorials/valgrind"
     }
   ]
