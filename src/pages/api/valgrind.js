@@ -21,7 +21,7 @@ const compileProgram = (cFilePath, executablePath) => {
 
 const runValgrind = (executablePath) => {
   return new Promise((resolve, reject) => {
-    /* Valgrind Flags */
+    /* Valgrind Flags*/
     execFile(
       "valgrind",
       [
@@ -32,9 +32,9 @@ const runValgrind = (executablePath) => {
       ],
       (err, stdout, stderr) => {
         if (err && !stderr) {
-          reject(err.message); 
+          reject(err.message);
         } else {
-          resolve({ stdout, stderr }); 
+          resolve({ stdout, stderr });
         }
       }
     );
@@ -70,7 +70,26 @@ export default async (req, res) => {
 
     try {
       const { stdout, stderr } = await runValgrind(executablePath);
-      res.status(200).json({ valgrindOutput: stderr, programOutput: stdout });
+
+      // Determines if there are leaks
+      const noLeaks = stderr.includes(
+        "All heap blocks were freed -- no leaks are possible"
+      );
+
+      if (noLeaks) {
+        return res.status(200).json({
+          success: true,
+          message: "No memory leaks detected.",
+          valgrindOutput: stderr,
+          programOutput: stdout,
+        });
+      } else {
+        return res.status(200).json({
+          success: false,
+          valgrindOutput: stderr,
+          programOutput: stdout,
+        });
+      }
     } catch (valgrindError) {
       res.status(500).json({ error: `Valgrind failed: ${valgrindError}` });
     }
