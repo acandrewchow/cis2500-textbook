@@ -62,5 +62,13 @@
         { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
         { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
       ]
+    },
+    {
+      "name": "Valgrind",
+      "exercises": [
+        { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
+        { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
+        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+      ]
     }
   ]
