@@ -121,7 +121,7 @@ export default function CodeRunner({
       {output && (
         <div className="mt-4 p-4 bg-zinc-700 rounded text-white">
           <h3 className="text-md font-bold">Program Output</h3>
-          <code>{output}</code>
+          <pre>{output}</pre>
         </div>
       )}
 

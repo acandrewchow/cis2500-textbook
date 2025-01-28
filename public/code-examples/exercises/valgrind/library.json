@@ -1,0 +1,13 @@
+{
+    "title": "Leaky Library",
+    "description": "Identify the memory leaks in the program and fix them to ensure proper memory management.",
+    "codeFilePath": "/code-examples/exercises/valgrind/library.c",
+    "solutionFilePath": "/code-examples/exercise-answers/libraryAnswer.c",
+    "apiEndpoint": "/api/valgrind",
+    "isReadOnly": false,
+    "isValgrind": true,
+    "hints": [
+      "Determine which fields are being allocated memory and ensure they are freed before the program exits"
+    ]
+  }
+  

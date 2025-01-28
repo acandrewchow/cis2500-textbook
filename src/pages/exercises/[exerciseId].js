@@ -14,6 +14,7 @@ const ExercisePage = () => {
       "/code-examples/exercises/review/findClosestToAverage.json",
     writeToBinary: "/code-examples/exercises/binary-files/writeToBinary.json",
     readFromBinary: "/code-examples/exercises/binary-files/readFromBinary.json",
+    library: "/code-examples/exercises/valgrind/library.json",
   };
 
   const exerciseFilePath = exerciseData[exerciseId];

@@ -106,6 +106,7 @@ const CodingExercise = ({ jsonFilePath }) => {
             apiEndpoint={exercise.apiEndpoint}
             isReadOnly={exercise.isReadOnly}
             testCases={exercise.testCases}
+            isValgrindEnabled={exercise.isValgrind}
           />
         </div>
       ) : (

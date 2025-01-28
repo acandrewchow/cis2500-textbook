@@ -5,6 +5,7 @@
   "solutionFilePath": "/code-examples/exercise-answers/writeToBinaryAnswer.c",
   "apiEndpoint": "/api/compile",
   "isReadOnly": false,
+  "isValgrind": false,
   "testCases": [
     {
       "input": "5 10 15 20 25",

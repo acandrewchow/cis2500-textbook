@@ -5,6 +5,7 @@
   "solutionFilePath": "/code-examples/exercise-answers/findClosestToAverageAnswer.c",
   "apiEndpoint": "/api/compile",
   "isReadOnly": false,
+  "isValgrind": false,
   "hints": [
     "1: Calculate the average by summing the numbers and dividing by the number of elements (5).",
     "2: Use the absolute difference to determine which number is closest to the average.",

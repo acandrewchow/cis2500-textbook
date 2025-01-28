@@ -5,6 +5,7 @@
   "solutionFilePath": "/code-examples/exercise-answers/topStudentAnswer.c",
   "apiEndpoint": "/api/compile",
   "isReadOnly": false,
+  "isValgrind": false,
   "testCases": [
     {
       "input": "3.9 3.7 3.8",
