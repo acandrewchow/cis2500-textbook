@@ -14,6 +14,7 @@ export default function CodeRunner({
   const [output, setOutput] = useState("");
   const [error, setError] = useState("");
   const [valgrindOutput, setValgrindOutput] = useState("");
+  const [valgrindSuccess, setValgrindSuccess] = useState(false);
   const [testResults, setTestResults] = useState([]);
 
   useEffect(() => {
@@ -74,11 +75,9 @@ export default function CodeRunner({
 
       const data = await response.json();
 
-      console.log(data);
-
       if (response.ok) {
-        console.log(data.valgrindOutput);
         setValgrindOutput(data.valgrindOutput);
+        setValgrindSuccess(data.success);
       } else {
         setError(data.error || "Failed to run Valgrind");
       }
@@ -122,6 +121,13 @@ export default function CodeRunner({
         <div className="mt-4 p-4 bg-zinc-700 rounded text-white">
           <h3 className="text-md font-bold">Program Output</h3>
           <pre>{output}</pre>
+        </div>
+      )}
+
+      {valgrindSuccess && (
+        <div className="mt-4 p-4 bg-green-500 text-white rounded">
+          <h3 className="text-md font-bold">Success!</h3>
+          <p>No Memory Leaks Found!</p>
         </div>
       )}
 
