@@ -1,0 +1,148 @@
+[
+  {
+    "id": 1,
+    "text": "What is the purpose of the base case in a recursive function?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "To handle the termination condition and stop further recursive calls."
+      },
+      { "label": "B", "text": "To initiate the first recursive call." },
+      { "label": "C", "text": "To calculate the final result." },
+      {
+        "label": "D",
+        "text": "To prevent the function from ever calling itself."
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The base case serves as the termination condition to stop further recursive calls, preventing an infinite loop"
+  },
+  {
+    "id": 2,
+    "text": "What is the output of the following C program?",
+    "choices": [
+      { "label": "A", "text": "15" },
+      { "label": "B", "text": "10" },
+      { "label": "C", "text": "5" },
+      { "label": "D", "text": "0" }
+    ],
+    "code": "#include <stdio.h>\nint sum(int n) {\n    if (n <= 0) return 0;\n    return n + sum(n - 1);\n}\n\nint main() {\n    printf(\"%d\\n\", sum(5));\n    return 0;\n}",
+    "correctAnswer": "A",
+    "explanation": "This recursive function calculates the sum of the integers from 1 to 5. The result is 1 + 2 + 3 + 4 + 5 = 15"
+  },
+  {
+    "id": 3,
+    "text": "Which of the following is a key characteristic of a recursive function?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "It calls itself with modified parameters until a base case is met."
+      },
+      { "label": "B", "text": "It uses a loop to repeat an operation" },
+      { "label": "C", "text": "It runs in constant time" },
+      { "label": "D", "text": "It only works for simple problems" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A recursive function calls itself with modified parameters, and this process continues until a base case is met, which terminates the recursion"
+  },
+  {
+    "id": 4,
+    "text": "What will be the result of the following recursive C function call `fibonacci(4)` in the given code?",
+    "choices": [
+      { "label": "A", "text": "3" },
+      { "label": "B", "text": "5" },
+      { "label": "C", "text": "2" },
+      { "label": "D", "text": "1" }
+    ],
+    "code": "#include <stdio.h>\nint fibonacci(int n) {\n    if (n == 0) return 0;\n    if (n == 1) return 1;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    printf(\"%d\\n\", fibonacci(4));\n    return 0;\n}",
+    "correctAnswer": "A",
+    "explanation": "The Fibonacci sequence starts as 0, 1, 1, 2, 3... Therefore, `fibonacci(4)` will return 3"
+  },
+  {
+    "id": 5,
+    "text": "Which of the following scenarios would cause a recursive function to fail?",
+    "choices": [
+      { "label": "A", "text": "The function lacks a base case" },
+      {
+        "label": "B",
+        "text": "The function has a correct base case but calls itself with no parameters"
+      },
+      {
+        "label": "C",
+        "text": "The function uses iteration within the recursion"
+      },
+      {
+        "label": "D",
+        "text": "The function returns a value for the base case"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Without a proper base case, the program will cause infinite recursion"
+  },
+  {
+    "id": 6,
+    "text": "What will be the output of the following C program when executed?",
+    "choices": [
+      { "label": "A", "text": "1 1 2 3 5" },
+      { "label": "B", "text": "1 2 3 5 8" },
+      { "label": "C", "text": "1 2 3 4 5" },
+      { "label": "D", "text": "1 3 5 8 13" }
+    ],
+    "code": "#include <stdio.h>\nint fibonacci(int n) {\n    if (n <= 1) return 1;\n    return fibonacci(n - 1) + fibonacci(n - 2);\n}\n\nint main() {\n    for (int i = 0; i < 5; i++) {\n        printf(\"%d \", fibonacci(i));\n    }\n    return 0;\n}",
+    "correctAnswer": "A",
+    "explanation": "The program prints the first 5 Fibonacci numbers starting from index 0. The correct sequence is 1, 1, 2, 3, 5"
+  },
+
+  {
+    "id": 7,
+    "text": "What is the result of the following recursive function when `n = 4`?",
+    "choices": [
+      { "label": "A", "text": "7" },
+      { "label": "B", "text": "10" },
+      { "label": "C", "text": "14" },
+      { "label": "D", "text": "5" }
+    ],
+    "code": "#include <stdio.h>\nint fun(int n) {\n    if (n == 0) return 0;\n    return n + fun(n - 1) + fun(n - 2);\n}\n\nint main() {\n    printf(\"%d\\n\", fun(4));\n    return 0;\n}",
+    "correctAnswer": "B",
+    "explanation": "The function calculates `n + fun(n - 1) + fun(n - 2)` recursively. For `fun(4)`, it computes 4 + fun(3) + fun(2). Fun(3) returns 6 and fun(2) returns 3. So the result is 4 + 6 + 3 = 10."
+  },
+  {
+    "id": 8,
+    "text": "What is the result of the following recursive function when `n = 3`?",
+    "choices": [
+      { "label": "A", "text": "5" },
+      { "label": "B", "text": "6" },
+      { "label": "C", "text": "7" },
+      { "label": "D", "text": "8" }
+    ],
+    "code": "#include <stdio.h>\nint fun(int n) {\n    if (n <= 0) return 0;\n    return n + fun(n - 1) + fun(n - 2);\n}\n\nint main() {\n    printf(\"%d\\n\", fun(3));\n    return 0;\n}",
+    "correctAnswer": "B",
+    "explanation": "The function calculates `n + fun(n - 1) + fun(n - 2)` recursively. For `fun(3)`, it computes 3 + fun(2) + fun(1), where fun(2) is 3 and fun(1) is 1. Thus, the result is 3 + 3 + 1 = 6."
+  },
+  {
+    "id": 9,
+    "text": "What is the output of the following recursive C program, given `n = 3`?",
+    "choices": [
+      { "label": "A", "text": "3 2 1 1 2 1 1 3 2 1 1 2 1 1" },
+      { "label": "B", "text": "6 3 3 3" },
+      { "label": "C", "text": "3 3 3 3" },
+      { "label": "D", "text": "1 1 1 1" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "In this function, `fun(3)` prints `3`, then calls `fun(2)` twice, which prints `2`, then calls `fun(1)` twice, which prints `1`. This recursion produces the output: 3 2 1 1 2 1 1 3 2 1 1 2 1 1.",
+    "code": "#include <stdio.h>\n\nvoid fun(int n) {\n    if (n <= 0) return;  \n    printf(\"%d \", n);         \n    fun(n - 1);               \n    fun(n - 1);           \n}\n\nint main() {\n    fun(3);\n    return 0;\n}"
+  },
+  {
+    "id": 10,
+    "text": "What will be the output of the following recursive program when `n = 2`?",
+    "choices": [
+      { "label": "A", "text": "4 2 1" },
+      { "label": "B", "text": "4" },
+      { "label": "C", "text": "2 2" },
+      { "label": "D", "text": "2" }
+    ],
+    "code": "#include <stdio.h>\nint recursive(int n) {\n    if (n == 1) return 1;\n    return n * recursive(n - 1);\n}\n\nint main() {\n    int result = recursive(2);\n    printf(\"%d \\n\", result * 2);\n    return 0;\n}",
+    "correctAnswer": "B",
+    "explanation": "The function calculates `n!`. `recursive(2)` will return 2, and then `result * 2` will return 4, so the output is `4`."
+  }
+]

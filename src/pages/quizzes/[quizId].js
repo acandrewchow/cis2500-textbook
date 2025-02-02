@@ -6,6 +6,7 @@ import TableOfContents from "@/components/TableOfContents";
 import quizOneQuestions from "@/data/quizzes/quizOneQuestions.json";
 import quizTwoQuestions from "@/data/quizzes/quizTwoQuestions.json";
 import quizThreeQuestions from "@/data/quizzes/quizThreeQuestions.json";
+import quizFourQuestions from "@/data/quizzes/quizFourQuestions.json";
 
 /*
 Quiz Data
@@ -25,6 +26,10 @@ const quizData = {
     title: "Quiz 3: Memory",
     questions: quizThreeQuestions,
   },
+  quizFour: {
+    title: "Quiz 4: Recursion",
+    questions: quizFourQuestions,
+  }
 };
 
 const QuizPage = () => {
