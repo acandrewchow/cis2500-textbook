@@ -8,7 +8,8 @@
       { "label": "C", "text": "<string.h>" },
       { "label": "D", "text": "<memory.h>" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "The <stdlib.h> library includes functions for dynamic memory allocation such as malloc(), calloc(), realloc(), and free()."
   },
   {
     "id": 2,
@@ -19,7 +20,8 @@
       { "label": "C", "text": "realloc()" },
       { "label": "D", "text": "All of the above" }
     ],
-    "correctAnswer": "D"
+    "correctAnswer": "D",
+    "explanation": "All of the listed functions—malloc(), calloc(), and realloc()—are used for dynamic memory allocation. malloc() and realloc() allocate memory blocks, while calloc() additionally initializes the memory to zero."
   },
   {
     "id": 3,
@@ -42,7 +44,8 @@
         "text": "There is no difference between malloc() and calloc()"
       }
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "explanation": "The key difference is that malloc() does not initialize memory, while calloc() allocates memory and sets it to zero."
   },
   {
     "id": 4,
@@ -53,7 +56,8 @@
       { "label": "C", "text": "Resizes an existing block of memory" },
       { "label": "D", "text": "Reinitializes all memory to zero" }
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "explanation": "The realloc() function is used to resize an already allocated block of memory, either increasing or decreasing its size."
   },
   {
     "id": 5,
@@ -70,21 +74,11 @@
         "text": "No action is needed; memory is automatically freed"
       }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "After dynamically allocating memory, you should use the free() function to release the memory when it is no longer needed to prevent memory leaks."
   },
   {
     "id": 6,
-    "text": "What happens if you attempt to free a NULL pointer?",
-    "choices": [
-      { "label": "A", "text": "It causes a segmentation fault" },
-      { "label": "B", "text": "It causes undefined behavior" },
-      { "label": "C", "text": "It does nothing and is safe to do" },
-      { "label": "D", "text": "It frees all allocated memory" }
-    ],
-    "correctAnswer": "C"
-  },
-  {
-    "id": 7,
     "text": "What does malloc() return if it fails to allocate memory?",
     "choices": [
       { "label": "A", "text": "A pointer to zero" },
@@ -92,10 +86,11 @@
       { "label": "C", "text": "A segmentation fault" },
       { "label": "D", "text": "An undefined value" }
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "explanation": "If malloc() fails to allocate memory, it returns NULL, signaling that memory allocation was unsuccessful."
   },
   {
-    "id": 8,
+    "id": 7,
     "text": "Which of the following statements about dynamic memory allocation is true?",
     "choices": [
       {
@@ -112,10 +107,11 @@
       },
       { "label": "D", "text": "calloc() cannot allocate memory for arrays" }
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "explanation": "Dynamically allocated memory must be explicitly freed using the free() function to avoid memory leaks."
   },
   {
-    "id": 9,
+    "id": 8,
     "text": "What happens if you free the same pointer twice?",
     "choices": [
       { "label": "A", "text": "The memory is freed twice" },
@@ -123,10 +119,11 @@
       { "label": "C", "text": "It causes a segmentation fault" },
       { "label": "D", "text": "Nothing happens; the second free is ignored" }
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "explanation": "Freeing the same pointer twice causes undefined behavior, which may result in memory corruption or crashes."
   },
   {
-    "id": 10,
+    "id": 9,
     "text": "What is a memory leak in C programming?",
     "choices": [
       { "label": "A", "text": "When a program accesses memory it doesn't own" },
@@ -143,11 +140,11 @@
         "text": "When a program uses memory that has already been freed"
       }
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "explanation": "A memory leak occurs when a program loses a reference to dynamically allocated memory without freeing it, resulting in wasted memory."
   },
-
   {
-    "id": 11,
+    "id": 10,
     "text": "What will be the output of the following code?",
     "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *ptr = malloc(4 * sizeof(int));\n    if (ptr == NULL) {\n        printf(\"Memory allocation failed\\n\");\n        return 1;\n    }\n\n    for (int i = 0; i < 4; i++) {\n        ptr[i] = i + 1;\n    }\n\n    for (int i = 0; i < 4; i++) {\n        printf(\"%d \", ptr[i]);\n    }\n\n    free(ptr);\n    return 0;\n}",
     "choices": [
@@ -156,10 +153,11 @@
       { "label": "C", "text": "Undefined behavior" },
       { "label": "D", "text": "Segmentation fault" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "A",
+    "explanation": "The code successfully allocates memory, assigns values to the array, and then prints them. The output will be '1 2 3 4'."
   },
   {
-    "id": 12,
+    "id": 11,
     "text": "What is the purpose of the free() function in the following code?",
     "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *arr = malloc(5 * sizeof(int));\n    if (arr == NULL) {\n        return 1;\n    }\n\n    for (int i = 0; i < 5; i++) {\n        arr[i] = i;\n    }\n\n    free(arr);\n    return 0;\n}",
     "choices": [
@@ -171,10 +169,11 @@
       },
       { "label": "D", "text": "It reallocates memory for 'arr'" }
     ],
-    "correctAnswer": "B"
+    "correctAnswer": "B",
+    "explanation": "The free() function is used to deallocate memory previously allocated using malloc(), preventing memory leaks."
   },
   {
-    "id": 13,
+    "id": 12,
     "text": "What will the following code print?",
     "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *ptr = malloc(sizeof(int));\n    if (ptr == NULL) {\n        printf(\"Memory allocation failed\\n\");\n        return 1;\n    }\n\n    *ptr = 42;\n    free(ptr);\n\n    printf(\"%d\\n\", *ptr);\n    return 0;\n}",
     "choices": [
@@ -183,33 +182,35 @@
       { "label": "C", "text": "Undefined behavior" },
       { "label": "D", "text": "Segmentation fault" }
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "C",
+    "explanation": "After freeing the memory, dereferencing the pointer leads to undefined behavior, as the memory has been deallocated."
   },
   {
-    "id": 14,
+    "id": 13,
     "text": "What is wrong with the following code?",
     "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *ptr = malloc(5 * sizeof(int));\n    ptr[0] = 10;\n    ptr[1] = 20;\n\n    // Memory not freed\n    return 0;\n}",
     "choices": [
       { "label": "A", "text": "The program will crash because malloc() fails" },
-      { "label": "B", "text": "There is no error in the code" },
       {
-        "label": "C",
-        "text": "It causes a memory leak as memory allocated by malloc() is not freed"
+        "label": "B",
+        "text": "The program will cause a memory leak because free() is not called"
       },
-      { "label": "D", "text": "It will result in a segmentation fault" }
+      { "label": "C", "text": "The program will run fine" },
+      { "label": "D", "text": "There is no issue with the code" }
     ],
-    "correctAnswer": "C"
+    "correctAnswer": "B",
+    "explanation": "The code allocates memory using malloc(), but it does not free the allocated memory before the program exits, which causes a memory leak."
   },
   {
-    "id": 15,
-    "text": "What will the output of the following code be?",
-    "code": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    int *arr = calloc(3, sizeof(int));\n    if (arr == NULL) {\n        return 1;\n    }\n\n    for (int i = 0; i < 3; i++) {\n        printf(\"%d \", arr[i]);\n    }\n\n    free(arr);\n    return 0;\n}",
+    "id": 14,
+    "text": "Which of the following is a good practice when working with dynamic memory allocation?",
     "choices": [
-      { "label": "A", "text": "0 0 0" },
-      { "label": "B", "text": "Random values" },
-      { "label": "C", "text": "Compilation error" },
-      { "label": "D", "text": "Undefined behavior" }
+      { "label": "A", "text": "Always free allocated memory after use" },
+      { "label": "B", "text": "Set pointers to NULL after freeing memory" },
+      { "label": "C", "text": "Check for NULL before using a pointer" },
+      { "label": "D", "text": "All of the above" }
     ],
-    "correctAnswer": "A"
+    "correctAnswer": "D",
+    "explanation": "All of the listed options are good practices. Freeing memory, setting pointers to NULL after freeing, and checking for NULL before using a pointer are important steps to prevent memory leaks and undefined behavior."
   }
 ]
