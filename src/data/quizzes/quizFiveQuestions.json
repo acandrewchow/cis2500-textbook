@@ -1,0 +1,150 @@
+[
+  {
+    "id": 1,
+    "text": "What is a linked list?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "A collection of elements stored in contiguous memory locations"
+      },
+      {
+        "label": "B",
+        "text": "A linear data structure where each element points to the next element"
+      },
+      {
+        "label": "C",
+        "text": "A tree-like structure with multiple child nodes"
+      },
+      { "label": "D", "text": "A type of array with a fixed size" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A linked list is a linear data structure where each node contains a value and a pointer to the next node in the sequence."
+  },
+  {
+    "id": 2,
+    "text": "How many pointers are in a node of a singly linked list?",
+    "choices": [
+      { "label": "A", "text": "0" },
+      { "label": "B", "text": "1" },
+      { "label": "C", "text": "2" },
+      { "label": "D", "text": "3" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Each node in a singly linked list contains one pointer, which points to the next node in the sequence."
+  },
+  {
+    "id": 3,
+    "text": "Which of the following operations is typically more efficient in a linked list compared to an array?",
+    "choices": [
+      { "label": "A", "text": "Random access" },
+      { "label": "B", "text": "Insertion at the beginning" },
+      { "label": "C", "text": "Searching for an element" },
+      { "label": "D", "text": "Accessing the middle element" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Insertion at the beginning of a linked list is O(1), whereas in an array, it requires shifting elements, making it O(n)."
+  },
+  {
+    "id": 4,
+    "text": "Which of the following correctly defines a node structure for a singly linked list in C?",
+    "code": "typedef struct Node {\n    int data;\n    struct Node* next;\n} Node;",
+    "choices": [
+      { "label": "A", "text": "Correct" },
+      { "label": "B", "text": "Incorrect, `typedef` should not be used" },
+      { "label": "C", "text": "Incorrect, `next` should be an array" },
+      { "label": "D", "text": "Incorrect, `next` should be `struct Node next`" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Using `typedef` allows `Node` to be used without `struct` keyword. The `next` pointer correctly points to another `Node`."
+  },
+  {
+    "id": 5,
+    "text": "What will be the output of the following C program?",
+    "code": "typedef struct Node {\n    int data;\n    struct Node* next;\n} Node;\n\nint main() {\n    Node a, b, c;\n    a.data = 10; b.data = 20; c.data = 30;\n    a.next = &b; b.next = &c; c.next = NULL;\n    printf(\"%d\", a.next->data);\n    return 0;\n}",
+    "choices": [
+      { "label": "A", "text": "10" },
+      { "label": "B", "text": "20" },
+      { "label": "C", "text": "30" },
+      { "label": "D", "text": "Compilation error" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "The statement `a.next->data` accesses `b.data`, which is 20."
+  },
+  {
+    "id": 6,
+    "text": "Which function correctly inserts a new node at the beginning of a linked list?",
+    "code": "void insertAtHead(Node** head, int newData) {\n    Node* newNode = (Node*)malloc(sizeof(Node));\n    newNode->data = newData;\n    newNode->next = *head;\n    *head = newNode;\n}",
+    "choices": [
+      { "label": "A", "text": "Correct" },
+      { "label": "B", "text": "Incorrect, malloc should not be used" },
+      {
+        "label": "C",
+        "text": "Incorrect, `newNode->next` should be set to NULL"
+      },
+      {
+        "label": "D",
+        "text": "Incorrect, `head` should be passed as `Node*` instead of `Node**`"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "This function correctly allocates memory for a new node, assigns data, sets `next` to the old head, and updates the head pointer."
+  },
+  {
+    "id": 7,
+    "text": "What will be the output of the following C program?",
+    "code": "typedef struct Node {\n    int data;\n    struct Node* next;\n} Node;\n\nvoid printList(Node* head) {\n    while (head != NULL) {\n        printf(\"%d \", head->data);\n        head = head->next;\n    }\n}\n\nint main() {\n    Node a = {10, NULL}, b = {20, NULL}, c = {30, NULL};\n    a.next = &b; b.next = &c;\n    printList(&a);\n    return 0;\n}",
+    "choices": [
+      { "label": "A", "text": "10 20 30" },
+      { "label": "B", "text": "10 30 20" },
+      { "label": "C", "text": "30 20 10" },
+      { "label": "D", "text": "Compilation error" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The linked list is correctly linked as a -> b -> c, so `printList` prints `10 20 30`."
+  },
+  {
+    "id": 8,
+    "text": "What happens if we forget to free memory when deleting a node from a linked list?",
+    "choices": [
+      { "label": "A", "text": "Nothing happens" },
+      { "label": "B", "text": "A segmentation fault occurs immediately" },
+      { "label": "C", "text": "Memory leak occurs" },
+      { "label": "D", "text": "The program crashes" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "If memory is not freed, the allocated space remains occupied, leading to a memory leak."
+  },
+  {
+    "id": 9,
+    "text": "What is the correct way to delete the first node of a linked list?",
+    "code": "void deleteHead(Node** head) {\n    if (*head == NULL) return;\n    Node* temp = *head;\n    *head = (*head)->next;\n    free(temp);\n}",
+    "choices": [
+      { "label": "A", "text": "Correct" },
+      { "label": "B", "text": "Incorrect, `head` should be passed as `Node*`" },
+      { "label": "C", "text": "Incorrect, `temp` should not be freed" },
+      {
+        "label": "D",
+        "text": "Incorrect, `*head = (*head)->next;` should be removed"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "This function correctly handles deletion by updating the head pointer and freeing the removed node."
+  },
+
+  {
+    "id": 10,
+    "text": "Which of the following correctly reverses a singly linked list?",
+    "code": "void reverseList(Node** head) {\n    Node *prev = NULL, *current = *head, *next = NULL;\n    while (current != NULL) {\n        next = current->next;\n        current->next = prev;\n        prev = current;\n        current = next;\n    }\n    *head = prev;\n}",
+    "choices": [
+      { "label": "A", "text": "The given code is Correct" },
+      { "label": "B", "text": "Incorrect, `next` should not be used" },
+      { "label": "C", "text": "Incorrect, `prev` should always be NULL" },
+      {
+        "label": "D",
+        "text": "Incorrect, `current->next = *head` should be used instead"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "This function correctly reverses the list by iterating through nodes, reversing pointers, and updating the head pointer."
+  }
+]

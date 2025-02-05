@@ -7,6 +7,7 @@ import quizOneQuestions from "@/data/quizzes/quizOneQuestions.json";
 import quizTwoQuestions from "@/data/quizzes/quizTwoQuestions.json";
 import quizThreeQuestions from "@/data/quizzes/quizThreeQuestions.json";
 import quizFourQuestions from "@/data/quizzes/quizFourQuestions.json";
+import quizFiveQuestions from "@/data/quizzes/quizFiveQuestions.json";
 
 /*
 Quiz Data
@@ -29,6 +30,10 @@ const quizData = {
   quizFour: {
     title: "Quiz 4: Recursion",
     questions: quizFourQuestions,
+  },
+  quizFive: {
+    title: "Quiz 5: Linked Lists",
+    questions: quizFiveQuestions
   }
 };
 
