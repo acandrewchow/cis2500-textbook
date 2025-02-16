@@ -1,0 +1,13 @@
+{
+    "title": "Cow Abduction",
+    "description": "Aliens are abducting cows, and the cow names are being allocated dynamically within a function. Ensure all memory is properly freed to avoid leaks.",
+    "codeFilePath": "/code-examples/exercises/valgrind/cows.c",
+    "solutionFilePath": "/code-examples/exercise-answers/cowsAnswer.c",
+    "apiEndpoint": "/api/valgrind",
+    "isReadOnly": false,
+    "isValgrind": true,
+    "hints": [
+        "Notice that memory is allocated inside the abductCow function. Ensure each allocation is freed.",
+        "Don't forget to free the array of cows after freeing each name."
+    ]
+}

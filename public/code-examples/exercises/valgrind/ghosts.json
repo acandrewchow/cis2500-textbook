@@ -1,0 +1,12 @@
+{
+    "title": "Haunted Mansion",
+    "description": "The ghosts haunting this mansion are causing memory leaks! Free the ghost names and fix the memory leak to keep the mansion safe!",
+    "codeFilePath": "/code-examples/exercises/valgrind/ghosts.c",
+    "solutionFilePath": "/code-examples/exercise-answers/ghostsAnswer.c",
+    "apiEndpoint": "/api/valgrind",
+    "isReadOnly": false,
+    "isValgrind": true,
+    "hints": [
+        "The ghost names are dynamically allocated but never freed. Make sure to free each name and the array of ghosts before the program exits."
+    ]
+}

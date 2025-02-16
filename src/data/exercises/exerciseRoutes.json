@@ -66,9 +66,9 @@
     {
       "name": "Valgrind",
       "exercises": [
-        { "label": "Library", "link": "/exercises/library" },
-        { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+        { "label": "Ghosts", "link": "/exercises/ghosts" },
+        { "label": "Cows", "link": "/exercises/cows" },
+        { "label": "Library", "link": "/exercises/library" }
       ]
     }
   ]

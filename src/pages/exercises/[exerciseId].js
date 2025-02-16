@@ -15,6 +15,8 @@ const ExercisePage = () => {
     writeToBinary: "/code-examples/exercises/binary-files/writeToBinary.json",
     readFromBinary: "/code-examples/exercises/binary-files/readFromBinary.json",
     library: "/code-examples/exercises/valgrind/library.json",
+    ghosts: "/code-examples/exercises/valgrind/ghosts.json",
+    cows: "/code-examples/exercises/valgrind/cows.json"
   };
 
   const exerciseFilePath = exerciseData[exerciseId];
