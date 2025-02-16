@@ -28,8 +28,8 @@ int main() {
     int numCows = 3;
     struct Cow *cows = malloc(numCows * sizeof(struct Cow));
 
-    abductCow(&cows[0], "Betsy", 42);
-    abductCow(&cows[1], "Mooana", 84);
+    abductCow(&cows[0], "Johnny", 42);
+    abductCow(&cows[1], "Strawberry", 84);
     abductCow(&cows[2], "Milkshake", 126);
 
     abductCows(cows, numCows);

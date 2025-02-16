@@ -2,24 +2,16 @@ import React from "react";
 import { useRouter } from "next/router";
 import TableOfContents from "@/components/TableOfContents";
 import CodingExercise from "@/components/CodingExercises";
+import exerciseData from "@/data/exercises/exerciseRoutes.json";
 
 const ExercisePage = () => {
   const router = useRouter();
   const { exerciseId } = router.query;
 
-  const exerciseData = {
-    topStudent: "/code-examples/exercises/review/topStudent.json",
-    sortStudents: "/code-examples/exercises/review/sortStudents.json",
-    findClosestToAverage:
-      "/code-examples/exercises/review/findClosestToAverage.json",
-    writeToBinary: "/code-examples/exercises/binary-files/writeToBinary.json",
-    readFromBinary: "/code-examples/exercises/binary-files/readFromBinary.json",
-    library: "/code-examples/exercises/valgrind/library.json",
-    ghosts: "/code-examples/exercises/valgrind/ghosts.json",
-    cows: "/code-examples/exercises/valgrind/cows.json"
-  };
-
-  const exerciseFilePath = exerciseData[exerciseId];
+  const exerciseFilePath = exerciseData
+    .flatMap((category) => category.exercises)
+    .find((exercise) => exercise.link.endsWith(exerciseId))
+    ?.filePath;
 
   if (!exerciseFilePath) {
     return (

@@ -1,74 +1,106 @@
 [
-    {
-      "name": "Structures",
-      "exercises": [
-        { "label": "Top Student", "link": "/exercises/topStudent" },
-        { "label": "Sort Students", "link": "/exercises/sortStudents" },
-        { "label": "Find Closest To Average", "link": "/exercises/findClosestToAverage" }
-      ]
-    },
-    {
-      "name": "Binary Files",
-      "exercises": [
-        { "label": "Write To Binary File", "link": "/exercises/writeToBinary" },
-        { "label": "Reading from Binary File", "link": "/exercises/readFromBinary" },
-        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-      ]
-    },
-    {
-      "name": "Memory",
-      "exercises": [
-        { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-        { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-      ]
-    },
-    {
-      "name": "Recursion",
-      "exercises": [
-        { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-        { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-      ]
-    },
-    {
-      "name": "Linked Lists",
-      "exercises": [
-        { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-        { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-      ]
-    },
-    {
-      "name": "Stacks and Queues",
-      "exercises": [
-        { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-        { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-      ]
-    },
-    {
-      "name": "Function Pointers",
-      "exercises": [
-        { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-        { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-      ]
-    },
-    {
-      "name": "Searching and Sorting",
-      "exercises": [
-        { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-        { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-        { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-      ]
-    },
-    {
-      "name": "Valgrind",
-      "exercises": [
-        { "label": "Ghosts", "link": "/exercises/ghosts" },
-        { "label": "Cows", "link": "/exercises/cows" },
-        { "label": "Library", "link": "/exercises/library" }
-      ]
-    }
-  ]
+  {
+    "name": "Structures",
+    "exercises": [
+      {
+        "label": "Top Student",
+        "link": "/exercises/topStudent",
+        "filePath": "/code-examples/exercises/review/topStudent.json"
+      },
+      {
+        "label": "Sort Students",
+        "link": "/exercises/sortStudents",
+        "filePath": "/code-examples/exercises/review/sortStudents.json"
+      },
+      {
+        "label": "Find Closest To Average",
+        "link": "/exercises/findClosestToAverage",
+        "filePath": "/code-examples/exercises/review/findClosestToAverage.json"
+      }
+    ]
+  },
+  {
+    "name": "Binary Files",
+    "exercises": [
+      {
+        "label": "Write To Binary File",
+        "link": "/exercises/writeToBinary",
+        "filePath": "/code-examples/exercises/binary-files/writeToBinary.json"
+      },
+      {
+        "label": "Reading from Binary File",
+        "link": "/exercises/readFromBinary",
+        "filePath": "/code-examples/exercises/binary-files/readFromBinary.json"
+      },
+      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+    ]
+  },
+  {
+    "name": "Memory",
+    "exercises": [
+      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
+      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
+      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+    ]
+  },
+  {
+    "name": "Recursion",
+    "exercises": [
+      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
+      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
+      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+    ]
+  },
+  {
+    "name": "Linked Lists",
+    "exercises": [
+      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
+      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
+      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+    ]
+  },
+  {
+    "name": "Stacks and Queues",
+    "exercises": [
+      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
+      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
+      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+    ]
+  },
+  {
+    "name": "Function Pointers",
+    "exercises": [
+      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
+      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
+      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+    ]
+  },
+  {
+    "name": "Searching and Sorting",
+    "exercises": [
+      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
+      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
+      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+    ]
+  },
+  {
+    "name": "Valgrind",
+    "exercises": [
+      {
+        "label": "Ghosts",
+        "link": "/exercises/ghosts",
+        "filePath": "/code-examples/exercises/valgrind/ghosts.json"
+      },
+      {
+        "label": "Cows",
+        "link": "/exercises/cows",
+        "filePath": "/code-examples/exercises/valgrind/cows.json"
+      },
+      {
+        "label": "Library",
+        "link": "/exercises/library",
+        "filePath": "/code-examples/exercises/valgrind/library.json"
+      }
+    ]
+  }
+]
