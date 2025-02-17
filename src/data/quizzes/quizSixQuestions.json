@@ -1,0 +1,147 @@
+[
+  {
+    "id": 1,
+    "text": "What is a stack?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "A data structure that follows First-In-First-Out (FIFO) order"
+      },
+      {
+        "label": "B",
+        "text": "A data structure that follows Last-In-First-Out (LIFO) order"
+      },
+      {
+        "label": "C",
+        "text": "A tree-like structure with multiple child nodes"
+      },
+      {
+        "label": "D",
+        "text": "A collection of elements stored in contiguous memory locations"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "A stack is a linear data structure that follows Last-In-First-Out (LIFO) order, where the last element added is the first one to be removed."
+  },
+  {
+    "id": 2,
+    "text": "Which operation is not performed on a stack?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Push"
+      },
+      {
+        "label": "B",
+        "text": "Pop"
+      },
+      {
+        "label": "C",
+        "text": "Peek"
+      },
+      {
+        "label": "D",
+        "text": "Enqueue"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Enqueue is an operation performed on a queue, not a stack. In a stack, the operations are Push, Pop, and Peek."
+  },
+  {
+    "id": 3,
+    "text": "What is a queue?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "A data structure that follows First-In-First-Out (FIFO) order"
+      },
+      {
+        "label": "B",
+        "text": "A data structure that follows Last-In-First-Out (LIFO) order"
+      },
+      {
+        "label": "C",
+        "text": "A collection of elements stored in contiguous memory locations"
+      },
+      {
+        "label": "D",
+        "text": "A tree-like structure with multiple child nodes"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "A queue is a linear data structure that follows First-In-First-Out (FIFO) order, where the first element added is the first one to be removed."
+  },
+  {
+    "id": 4,
+    "text": "Which of the following operations is not associated with a queue?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Enqueue"
+      },
+      {
+        "label": "B",
+        "text": "Dequeue"
+      },
+      {
+        "label": "C",
+        "text": "Peek"
+      },
+      {
+        "label": "D",
+        "text": "Pop"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "Pop is an operation associated with stacks, not queues. In queues, the operations are Enqueue, Dequeue, and Peek."
+  },
+  {
+    "id": 6,
+    "text": "Which operation is the most time-consuming in a queue implemented using an array?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Enqueue"
+      },
+      {
+        "label": "B",
+        "text": "Dequeue"
+      },
+      {
+        "label": "C",
+        "text": "Peek"
+      },
+      {
+        "label": "D",
+        "text": "All operations take the same time"
+      }
+    ],
+    "correctAnswer": "B",
+    "explanation": "In an array-based queue, Dequeue requires shifting all elements to the left, making it O(n)."
+  },
+  {
+    "id": 7,
+    "text": "Which of the following correctly reverses a stack using recursion?",
+    "code": "void reverseStack(Stack* s) {\n    if (isEmpty(s)) return;\n    int temp = pop(s);\n    reverseStack(s);\n    insertAtBottom(s, temp);\n}",
+    "choices": [
+      {
+        "label": "A",
+        "text": "Correct"
+      },
+      {
+        "label": "B",
+        "text": "Incorrect, `temp` should not be used"
+      },
+      {
+        "label": "C",
+        "text": "Incorrect, `reverseStack` should be called after `insertAtBottom`"
+      },
+      {
+        "label": "D",
+        "text": "Incorrect, `isEmpty` should not be used"
+      }
+    ],
+    "correctAnswer": "A",
+    "explanation": "This function recursively pops all elements, then inserts each at the bottom, reversing the stack order."
+  }
+]

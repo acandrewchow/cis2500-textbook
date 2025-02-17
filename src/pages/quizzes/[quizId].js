@@ -8,6 +8,7 @@ import quizTwoQuestions from "@/data/quizzes/quizTwoQuestions.json";
 import quizThreeQuestions from "@/data/quizzes/quizThreeQuestions.json";
 import quizFourQuestions from "@/data/quizzes/quizFourQuestions.json";
 import quizFiveQuestions from "@/data/quizzes/quizFiveQuestions.json";
+import quizSixQuestions from "@/data/quizzes/quizSixQuestions.json";
 
 /*
 Quiz Data
@@ -33,13 +34,17 @@ const quizData = {
   },
   quizFive: {
     title: "Quiz 5: Linked Lists",
-    questions: quizFiveQuestions
-  }
+    questions: quizFiveQuestions,
+  },
+  quizSix: {
+    title: "Quiz 6: Stacks and Queues",
+    questions: quizSixQuestions,
+  },
 };
 
 const QuizPage = () => {
   const router = useRouter();
-  const { quizId } = router.query; 
+  const { quizId } = router.query;
 
   const quiz = quizData[quizId];
 
