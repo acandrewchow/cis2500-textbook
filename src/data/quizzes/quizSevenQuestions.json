@@ -1,0 +1,150 @@
+[
+    {
+      "id": 1,
+      "text": "What is a function pointer in C?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "A pointer to an array of functions"
+        },
+        {
+          "label": "B",
+          "text": "A variable that stores the address of a function"
+        },
+        {
+          "label": "C",
+          "text": "A pointer to a variable inside a function"
+        },
+        {
+          "label": "D",
+          "text": "A pointer to a structure that contains functions"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "A function pointer is a variable that stores the address of a function, allowing it to be called through the pointer."
+    },
+    {
+      "id": 2,
+      "text": "How do you declare a function pointer in C?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "int* ptr()"
+        },
+        {
+          "label": "B",
+          "text": "int (*ptr)()"
+        },
+        {
+          "label": "C",
+          "text": "int* (*ptr)()"
+        },
+        {
+          "label": "D",
+          "text": "void (*ptr)(int)"
+        }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The correct syntax for declaring a function pointer is `void (*ptr)(int)` which defines a pointer to a function that takes an integer argument and returns nothing."
+    },
+    {
+      "id": 3,
+      "text": "What is the main advantage of using function pointers in C?",
+      "choices": [
+        {
+          "label": "A",
+          "text": "They allow for static memory allocation"
+        },
+        {
+          "label": "B",
+          "text": "They make code more flexible by enabling dynamic function calls"
+        },
+        {
+          "label": "C",
+          "text": "They allow functions to return multiple values"
+        },
+        {
+          "label": "D",
+          "text": "They simplify the process of function overloading"
+        }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Function pointers provide flexibility by allowing functions to be called dynamically, enabling callbacks, and other advanced use cases."
+    },
+    {
+      "id": 4,
+      "text": "Which of the following correctly uses a function pointer to call a function in C?",
+      "code": "void hello() {\n    printf(\"Hello, World!\\n\");\n}\n\nint main() {\n    void (*funcPtr)() = hello;\n    funcPtr();\n    return 0;\n}",
+      "choices": [
+        { "label": "A", "text": "Incorrect, function pointer cannot be dereferenced" },
+        { "label": "B", "text": "Incorrect, the function pointer should be called using `funcPtr()`" },
+        { "label": "C", "text": "Incorrect, `hello` should be passed as `&hello`" },
+        { "label": "D", "text": "None of the above" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "The code correctly declares a function pointer `funcPtr`, assigns it to the function `hello`, and calls `funcPtr()` to invoke the function."
+    },
+    {
+      "id": 5,
+      "text": "What will happen if you call a function using an uninitialized function pointer?",
+      "choices": [
+        { "label": "A", "text": "The function will execute as expected" },
+        { "label": "B", "text": "A segmentation fault will occur" },
+        { "label": "C", "text": "The program will print a null message" },
+        { "label": "D", "text": "The function will return a random value" }
+      ],
+      "correctAnswer": "B",
+      "explanation": "Calling a function through an uninitialized function pointer can lead to undefined behavior, often resulting in a segmentation fault."
+    },
+    {
+      "id": 6,
+      "text": "Which of the following code snippets correctly assigns a function pointer and calls the function?",
+      "code": "void add(int a, int b) {\n    printf(\"Sum: %d\\n\", a + b);\n}\n\nint main() {\n    void (*funcPtr)(int, int) = add;\n    funcPtr(3, 5);\n    return 0;\n}",
+      "choices": [
+        { "label": "A", "text": "Incorrect, the function pointer must take only one argument" },
+        { "label": "B", "text": "Incorrect, function pointer must be declared as `void*`" },
+        { "label": "C", "text": "Incorrect, `funcPtr()` should not be used" },
+        { "label": "D", "text": "None of the above" }
+      ],
+      "correctAnswer": "D",
+      "explanation": "This code correctly declares a function pointer `funcPtr`, assigns it to `add`, and calls `funcPtr(3, 5)` to invoke the function."
+    },
+    {
+      "id": 7,
+      "text": "What is the output of the following code snippet when using function pointers?",
+      "code": "void greet() {\n    printf(\"Good morning!\");\n}\n\nvoid evening() {\n    printf(\"Good evening!\");\n}\n\nint main() {\n    void (*funcPtr)();\n    funcPtr = greet;\n    funcPtr();\n    funcPtr = evening;\n    funcPtr();\n    return 0;\n}",
+      "choices": [
+        { "label": "A", "text": "Good morning! Good evening!" },
+        { "label": "B", "text": "Good evening! Good morning!" },
+        { "label": "C", "text": "Good morning!" },
+        { "label": "D", "text": "Good evening!" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The function pointer is first set to `greet`, printing 'Good morning!', then it is set to `evening`, printing 'Good evening!' after."
+    },
+    {
+      "id": 8,
+      "text": "Which of the following allows you to pass a function as a parameter to another function in C?",
+      "choices": [
+        { "label": "A", "text": "Passing the function pointer as an argument" },
+        { "label": "B", "text": "Passing the function name directly" },
+        { "label": "C", "text": "Using function overloading" },
+        { "label": "D", "text": "Passing the function's return type" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "You can pass a function pointer as an argument to another function to allow dynamic function calling."
+    },
+    {
+      "id": 9,
+      "text": "Which of the following is an example of a callback function using function pointers?",
+      "code": "void process(int x, void (*callback)(int)) {\n    callback(x);\n}\n\nvoid printSquare(int num) {\n    printf(\"%d\\n\", num * num);\n}\n\nint main() {\n    process(5, printSquare);\n    return 0;\n}",
+      "choices": [
+        { "label": "A", "text": "Correct" },
+        { "label": "B", "text": "Incorrect, `printSquare` should be passed by reference" },
+        { "label": "C", "text": "Incorrect, callback function cannot return anything" },
+        { "label": "D", "text": "Incorrect, function pointer should be `int (*callback)(int)`" }
+      ],
+      "correctAnswer": "A",
+      "explanation": "The `process` function accepts a function pointer `callback` and calls it inside the function, making `printSquare` a callback function."
+    }
+  ]

@@ -9,6 +9,7 @@ import quizThreeQuestions from "@/data/quizzes/quizThreeQuestions.json";
 import quizFourQuestions from "@/data/quizzes/quizFourQuestions.json";
 import quizFiveQuestions from "@/data/quizzes/quizFiveQuestions.json";
 import quizSixQuestions from "@/data/quizzes/quizSixQuestions.json";
+import quizSevenQuestions from "@/data/quizzes/quizSevenQuestions.json";
 
 /*
 Quiz Data
@@ -40,6 +41,10 @@ const quizData = {
     title: "Quiz 6: Stacks and Queues",
     questions: quizSixQuestions,
   },
+  quizSeven: {
+    title: "Quiz 7: Function Pointers",
+    questions: quizSevenQuestions,
+  }
 };
 
 const QuizPage = () => {
