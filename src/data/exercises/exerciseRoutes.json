@@ -31,56 +31,7 @@
         "label": "Reading from Binary File",
         "link": "/exercises/readFromBinary",
         "filePath": "/code-examples/exercises/binary-files/readFromBinary.json"
-      },
-      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-    ]
-  },
-  {
-    "name": "Memory",
-    "exercises": [
-      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-    ]
-  },
-  {
-    "name": "Recursion",
-    "exercises": [
-      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-    ]
-  },
-  {
-    "name": "Linked Lists",
-    "exercises": [
-      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-    ]
-  },
-  {
-    "name": "Stacks and Queues",
-    "exercises": [
-      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-    ]
-  },
-  {
-    "name": "Function Pointers",
-    "exercises": [
-      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
-    ]
-  },
-  {
-    "name": "Searching and Sorting",
-    "exercises": [
-      { "label": "Exercise 1: Lorum", "link": "/exercises/exerciseFour" },
-      { "label": "Exercise 2: Lorum", "link": "/exercises/exerciseFive" },
-      { "label": "Exercise 3: Lorum", "link": "/exercises/exerciseSix" }
+      }
     ]
   },
   {
