@@ -1,0 +1,138 @@
+[
+  {
+    "id": 1,
+    "text": "Which of the following describes the time complexity of Binary Search in the worst case?",
+    "choices": [
+      { "label": "A", "text": "O(1)" },
+      { "label": "B", "text": "O(log n)" },
+      { "label": "C", "text": "O(n)" },
+      { "label": "D", "text": "O(n log n)" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Binary Search has a time complexity of O(log n) in the worst case, as it repeatedly halves the search space."
+  },
+  {
+    "id": 2,
+    "text": "Which of the following search algorithms requires the array to be sorted?",
+    "choices": [
+      { "label": "A", "text": "Linear Search" },
+      { "label": "B", "text": "Binary Search" },
+      { "label": "C", "text": "Jump Search" },
+      { "label": "D", "text": "Exponential Search" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Binary Search requires a sorted array to efficiently search for an element by dividing the search space in half."
+  },
+  {
+    "id": 3,
+    "text": "What is the time complexity of a Linear Search algorithm?",
+    "choices": [
+      { "label": "A", "text": "O(1)" },
+      { "label": "B", "text": "O(n)" },
+      { "label": "C", "text": "O(log n)" },
+      { "label": "D", "text": "O(n^2)" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "Linear Search has a time complexity of O(n) as it checks each element in the array sequentially."
+  },
+  {
+    "id": 4,
+    "text": "Which of the following best describes the Binary Search algorithm in C?",
+    "code": "int binarySearch(int arr[], int left, int right, int target) {\n    while (left <= right) {\n        int mid = left + (right - left) / 2;\n        if (arr[mid] == target) return mid;\n        else if (arr[mid] < target) left = mid + 1;\n        else right = mid - 1;\n    }\n    return -1;\n}",
+    "choices": [
+      { "label": "A", "text": "Correct" },
+      {
+        "label": "B",
+        "text": "Incorrect, mid should be calculated differently"
+      },
+      { "label": "C", "text": "Incorrect, the loop condition is wrong" },
+      { "label": "D", "text": "Incorrect, mid should be checked first" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "This is the correct implementation of Binary Search in C, where mid is calculated and the search space is narrowed accordingly."
+  },
+  {
+    "id": 5,
+    "text": "What is the best-case time complexity of Binary Search?",
+    "choices": [
+      { "label": "A", "text": "O(1)" },
+      { "label": "B", "text": "O(log n)" },
+      { "label": "C", "text": "O(n)" },
+      { "label": "D", "text": "O(n log n)" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The best-case time complexity of Binary Search is O(1), which happens when the target element is found at the mid position on the first comparison."
+  },
+  {
+    "id": 6,
+    "text": "What is the time complexity of the worst-case scenario for Linear Search?",
+    "choices": [
+      { "label": "A", "text": "O(1)" },
+      { "label": "B", "text": "O(log n)" },
+      { "label": "C", "text": "O(n)" },
+      { "label": "D", "text": "O(n^2)" }
+    ],
+    "correctAnswer": "C",
+    "explanation": "In the worst case, Linear Search will check every element in the array, making its time complexity O(n)."
+  },
+  {
+    "id": 7,
+    "text": "Which of the following is true for the time complexity of Quick Sort in the worst case?",
+    "choices": [
+      { "label": "A", "text": "O(n log n)" },
+      { "label": "B", "text": "O(n^2)" },
+      { "label": "C", "text": "O(log n)" },
+      { "label": "D", "text": "O(1)" }
+    ],
+    "correctAnswer": "B",
+    "explanation": "In the worst case, Quick Sort has a time complexity of O(n^2), which occurs when the pivot always divides the array into uneven parts."
+  },
+  {
+    "id": 8,
+    "text": "In which case would the Linear Search be preferred over Binary Search?",
+    "choices": [
+      { "label": "A", "text": "When the array is unsorted" },
+      { "label": "B", "text": "When the array is sorted" },
+      { "label": "C", "text": "When the array is very large" },
+      { "label": "D", "text": "When searching for the maximum element" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "Linear Search is preferred when the array is unsorted, as Binary Search requires the array to be sorted."
+  },
+  {
+    "id": 9,
+    "text": "What is the space complexity of the Binary Search algorithm?",
+    "choices": [
+      { "label": "A", "text": "O(1)" },
+      { "label": "B", "text": "O(log n)" },
+      { "label": "C", "text": "O(n)" },
+      { "label": "D", "text": "O(n log n)" }
+    ],
+    "correctAnswer": "A",
+    "explanation": "The space complexity of Binary Search is O(1) for the iterative version, as it only uses a constant amount of extra space."
+  },
+  {
+    "id": 11,
+    "text": "Which of the following is the correct order of Big O notations from slowest to fastest (most efficient)?",
+    "choices": [
+      {
+        "label": "A",
+        "text": "O(n log n), O(n^2), O(1), O(n)"
+      },
+      {
+        "label": "B",
+        "text": "O(n^2), O(n log n), O(n), O(1)"
+      },
+      {
+        "label": "C",
+        "text": "O(n), O(n log n), O(1), O(n^2)"
+      },
+      {
+        "label": "D",
+        "text": "O(1), O(n), O(n log n), O(n^2)"
+      }
+    ],
+    "correctAnswer": "D",
+    "explanation": "The order of Big O notations from fastest (least time complexity) to slowest (highest time complexity) is as follows: O(1) is constant time, O(n) is linear time, O(n log n) is log-linear time, and O(n^2) is quadratic time."
+  }
+]

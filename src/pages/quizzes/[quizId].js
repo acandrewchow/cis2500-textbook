@@ -10,6 +10,7 @@ import quizFourQuestions from "@/data/quizzes/quizFourQuestions.json";
 import quizFiveQuestions from "@/data/quizzes/quizFiveQuestions.json";
 import quizSixQuestions from "@/data/quizzes/quizSixQuestions.json";
 import quizSevenQuestions from "@/data/quizzes/quizSevenQuestions.json";
+import quizEightQuestions from "@/data/quizzes/quizEightQuestions.json";
 
 /*
 Quiz Data
@@ -44,7 +45,11 @@ const quizData = {
   quizSeven: {
     title: "Quiz 7: Function Pointers",
     questions: quizSevenQuestions,
-  }
+  },
+  quizEight: {
+    title: "Quiz 8: Searching and Sorting",
+    questions: quizEightQuestions,
+  },
 };
 
 const QuizPage = () => {
